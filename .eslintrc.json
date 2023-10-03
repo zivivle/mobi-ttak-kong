@@ -10,12 +10,11 @@
     "plugin:import/warnings",
     "plugin:@typescript-eslint/recommended"
   ],
-  "ignorePatterns": ["**/build/**/*.*", ".yarn/**/*", "node_modules", "vite.config.ts", ".pnp.*", ".yarnrc.yml", "yarn.lock"],
+  "ignorePatterns": ["**/build/**/*.*", ".yarn/**/*", "node_modules", ".eslintrc.json", ".pnp.*", ".yarnrc.yml", "yarn.lock"],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
-    "project": ["tsconfig.json"] ,
     "sourceType": "module"
   },
   "plugins": [ "react-hooks", "@typescript-eslint", "prettier"],

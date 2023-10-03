@@ -1,3 +1,4 @@
+import { Header, Nav } from '@/components'
 import '@/styles/global.css'
 
 import type { Metadata } from 'next'
@@ -17,7 +18,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={mainFont.className}>{children}</body>
+      <body className={mainFont.className}>
+        <Header />
+        {children}
+        <Nav />
+      </body>
     </html>
   )
 }
