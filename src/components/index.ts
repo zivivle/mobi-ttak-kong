@@ -1,6 +1,5 @@
 export * from './Button'
 export * from './Header'
-export * from './Header/_components/IntroHeader/IntroHeader'
-export * from './Nav'
+export * from './Input'
 export * from './Progress'
 export * from './Toggle'
