@@ -1,9 +1,13 @@
 import '@/styles/global.css'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import localFont from 'next/font/local'
+
+const mainFont = localFont({
+  src: './fonts/PretendardVariable.woff2',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={mainFont.className}>{children}</body>
     </html>
   )
 }
