@@ -1,6 +1,6 @@
 import { Button } from '@/components'
 import { CarouselButton, IntroSectionFirst, IntroSectionSecond, IntroSectionThird } from './_components'
-import { siteConfig } from '@/config/main'
+import { siteConfig } from '@/constants/main'
 
 export default function IntroPage() {
   return (

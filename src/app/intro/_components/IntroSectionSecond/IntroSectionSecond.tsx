@@ -1,4 +1,4 @@
-import { sectionSecondConfig } from '@/config/sectionSecond'
+import { sectionSecondConfig } from '@/constants/sectionSecond'
 
 import Image from 'next/image'
 import { StepCard } from './_components'

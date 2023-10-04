@@ -1,5 +1,5 @@
 import { Button } from '@/components'
-import { siteConfig } from '@/config/main'
+import { siteConfig } from '@/constants/main'
 
 export const IntroSectionThird = () => {
   return (

@@ -1,4 +1,4 @@
-import { sectionFirstConfig } from '@/config/sectionFirst'
+import { sectionFirstConfig } from '@/constants/sectionFirst'
 import { InfoCard } from './_components'
 
 export const IntroSectionFirst = () => {
