@@ -22,7 +22,7 @@ export default function IntroPage() {
           </div>
         </div>
         <div className="fixed left-95 top-1/2 transform -translate-y-1/2 space-y-5">
-          <CarouselButton />
+          <CarouselButton numButtons={4} />
         </div>
       </div>
       <IntroSectionFirst />
