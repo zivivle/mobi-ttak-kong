@@ -49,6 +49,7 @@ module.exports = {
           '200': '#79CDB1',
           '300': '#42B28D',
           gray: '#555555',
+          gray939: '#939393',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',

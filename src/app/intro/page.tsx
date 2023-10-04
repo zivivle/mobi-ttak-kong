@@ -4,12 +4,19 @@ import { siteConfig } from '@/config/main'
 
 export default function IntroPage() {
   return (
-    <div className="h-screen overflow-auto">
-      <div className="h-screen flex flex-col items-left justify-center bg-blue-200">
+    <div
+      style={{
+        backgroundImage: "url('/image/intro-bg1.webp')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+      className="h-screen overflow-auto"
+    >
+      <div className="h-screen flex flex-col items-left justify-center ">
         <div className="ml-165">
           <h1 className="font-bold text-38 mb-35">{siteConfig.description}</h1>
           <div>
-            <Button className="w-217 h-60 text-white" fontSize={'xl'}>
+            <Button className="w-217 h-60 text-white rounded-[20px]" fontSize={'xl'}>
               딱콩 시작하기
             </Button>
           </div>
