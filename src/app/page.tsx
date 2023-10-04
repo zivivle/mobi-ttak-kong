@@ -1,9 +1,3 @@
-import { Button } from '@/components'
-
 export default function Home() {
-  return (
-    <div>
-      <Button>샤든놈</Button>
-    </div>
-  )
+  return <div className="h-screen overflow-auto">hi my name is home</div>
 }

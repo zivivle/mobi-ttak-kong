@@ -1,4 +1,4 @@
-import { Header, Nav } from '@/components'
+import { Header } from '@/components'
 import '@/styles/global.css'
 
 import type { Metadata } from 'next'
@@ -21,7 +21,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={mainFont.className}>
         <Header />
         {children}
-        <Nav />
       </body>
     </html>
   )
