@@ -1,17 +1,15 @@
 import { Button } from '@/components'
 import { CarouselButton, IntroSectionFirst, IntroSectionSecond, IntroSectionThird } from './_components'
 import { siteConfig } from '@/constants/main'
+import Image from 'next/image'
+import bgImage from '/public/image/intro-bg1.webp'
 
 export default function IntroPage() {
   return (
-    <div
-      style={{
-        backgroundImage: "url('/image/intro-bg1.webp')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-      className="h-screen overflow-auto"
-    >
+    <div className="relative h-screen overflow-auto">
+      <div className="absolute inset-0 z-[-1]">
+        <Image src={bgImage} alt="backgroundImage" layout="fill" objectFit="cover" />
+      </div>
       <div className="h-screen flex flex-col items-left justify-center ">
         <div className="ml-165">
           <h1 className="font-bold text-38 mb-35">{siteConfig.description}</h1>

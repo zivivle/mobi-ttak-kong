@@ -8,7 +8,7 @@ export const sectionFirstConfig = {
     {
       id: 1,
       image: logo1,
-      description1: `“내가 원하는`,
+      description1: `“내가 원하는 `,
       description2: `스터디부터 보고 싶어요.”`,
       info: '23살 대학생 김OO',
     },
