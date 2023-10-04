@@ -6,6 +6,7 @@ import screenshot3 from '../../public/image/intro-screen3.png'
 export const sectionSecondConfig = {
   descriptionL: [
     {
+      id: 1,
       image: screenshot1,
       step: 'Step 1.',
       description1: '원하는 스터디 분야를 선택해주세요!',
@@ -13,6 +14,7 @@ export const sectionSecondConfig = {
     },
 
     {
+      id: 2,
       image: screenshot3,
       step: 'Step 3.',
       description1: '마지막으로, 원하는 스터디 레벨을 선택해주세요!',
@@ -21,6 +23,7 @@ export const sectionSecondConfig = {
   ],
   descriptionR: [
     {
+      id: 3,
       image: screenshot2,
       step: 'Step 2.',
       description1: '대면 / 비대면 여부와 희망 스터디 장소를 선택해주세요!',
