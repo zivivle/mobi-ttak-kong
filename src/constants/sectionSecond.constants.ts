@@ -1,9 +1,9 @@
-export type SiteConfig = typeof sectionSecondConfig
+export type SiteConfig = typeof sectionSecondConstants
 import screenshot1 from '../../public/image/intro-screen1.png'
 import screenshot2 from '../../public/image/intro-screen2.png'
 import screenshot3 from '../../public/image/intro-screen3.png'
 
-export const sectionSecondConfig = {
+export const sectionSecondConstants = {
   description: [
     {
       id: 1,

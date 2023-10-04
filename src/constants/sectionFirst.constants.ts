@@ -1,9 +1,9 @@
-export type SiteConfig = typeof sectionFirstConfig
+export type SiteConfig = typeof sectionFirstConstants
 import logo1 from '../../public/image/emoji-thinking.png'
 import logo2 from '../../public/image/emoji-sad.png'
 import logo3 from '../../public/image/emoji-dizzy.png'
 
-export const sectionFirstConfig = {
+export const sectionFirstConstants = {
   description: [
     {
       id: 1,

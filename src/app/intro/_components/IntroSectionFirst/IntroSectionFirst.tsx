@@ -1,4 +1,4 @@
-import { sectionFirstConfig } from '@/constants/sectionFirst'
+import { sectionFirstConstants } from '@/constants/sectionFirst.constants'
 import { InfoCard } from './_components'
 
 export const IntroSectionFirst = () => {
@@ -8,7 +8,7 @@ export const IntroSectionFirst = () => {
         쏟아지는 스터디에, 검색부터 하고 있진 않으셨나요?
       </div>
       <div className="bg-primary-50 w-full flex flex-row justify-center gap-20  ">
-        {sectionFirstConfig.description.map((info) => (
+        {sectionFirstConstants.description.map((info) => (
           <InfoCard key={info.id} introInfo={info} />
         ))}
       </div>
