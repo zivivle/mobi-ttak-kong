@@ -1,5 +1,7 @@
 import { sectionSecondConfig } from '@/config/sectionSecond'
-import { InfoListL, InfoListR } from './_components'
+
+import Image from 'next/image'
+import { StepCard } from './_components'
 
 export const IntroSectionSecond = () => {
   return (
@@ -7,9 +9,24 @@ export const IntroSectionSecond = () => {
       <div className="flex justify-center items-center mb-20 text-[26px] font-bold">
         나만의 스터디를 찾는 방법 3 STEP!
       </div>
-      <InfoListL data={sectionSecondConfig.descriptionL[0]} />
-      <InfoListR data={sectionSecondConfig.descriptionR[0]} />
-      <InfoListL data={sectionSecondConfig.descriptionL[1]} />
+      <div className="flex flex-row justify-center items-center gap-20 mb-20">
+        <div className="bg-primary-50 w-[700px] p-10 rounded-[20px]">
+          <Image src={sectionSecondConfig.description[0].image} alt="testlogo" width={700} height={200} />
+        </div>
+        <StepCard introInfo={sectionSecondConfig.description[0]} />
+      </div>
+      <div className="flex flex-row justify-center items-center gap-20 mb-20">
+        <StepCard introInfo={sectionSecondConfig.description[2]} />
+        <div className="bg-primary-50 w-[700px] p-10 rounded-[20px]">
+          <Image src={sectionSecondConfig.description[2].image} alt="testlogo" width={700} height={200} />
+        </div>
+      </div>
+      <div className="flex flex-row justify-center items-center gap-20 mb-20">
+        <div className="bg-primary-50 w-[700px] p-10 rounded-[20px]">
+          <Image src={sectionSecondConfig.description[1].image} alt="testlogo" width={700} height={200} />
+        </div>
+        <StepCard introInfo={sectionSecondConfig.description[1]} />
+      </div>
     </div>
   )
 }

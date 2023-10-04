@@ -4,7 +4,7 @@ import screenshot2 from '../../public/image/intro-screen2.png'
 import screenshot3 from '../../public/image/intro-screen3.png'
 
 export const sectionSecondConfig = {
-  descriptionL: [
+  description: [
     {
       id: 1,
       image: screenshot1,
@@ -20,8 +20,6 @@ export const sectionSecondConfig = {
       description1: '마지막으로, 원하는 스터디 레벨을 선택해주세요!',
       info: '나의 수준에 맞게 선택해 나와 딱 맞는 스터디원을 만나보세요.',
     },
-  ],
-  descriptionR: [
     {
       id: 3,
       image: screenshot2,
