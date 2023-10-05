@@ -10,7 +10,7 @@ export const siteConfig = {
     },
     {
       title: '내 스터디',
-      href: '/mystudy/applied',
+      href: '/mystudy/created',
     },
     {
       title: '매칭 현황',
