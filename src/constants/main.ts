@@ -10,7 +10,7 @@ export const siteConfig = {
     },
     {
       title: '매칭 현황',
-      href: '/login',
+      href: '/matching',
     },
     {
       title: '스터디 만들기',
