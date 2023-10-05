@@ -9,7 +9,7 @@ export const IntroSectionFirst = () => {
       </div>
       <div className="bg-primary-50 w-full flex flex-row justify-center gap-20  ">
         {sectionFirstConstants.description.map((info) => (
-          <InfoCard key={info.id} introInfo={info} />
+          <InfoCard key={info.description} introInfo={info} />
         ))}
       </div>
     </div>
