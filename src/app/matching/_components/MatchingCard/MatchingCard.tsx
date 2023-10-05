@@ -4,7 +4,7 @@ import { Button } from '@/components'
 
 export const MatchingCard = () => {
   return (
-    <div className="w-[500px] bg-primary-50 rounded-[20px] p-[50px] ">
+    <div className="w-[500px] bg-primary-50 rounded-[20px] p-[43px] mt-[30px]">
       <div className="mb-2 font-bold text-[16px] text-primary-gray200">프론트엔드 스터디</div>
       <div className="flex flex-row items-center h-[35px]">
         <Image src={defaultProfile} alt="임시 이미지" width={35} height={40} />
