@@ -1,7 +1,7 @@
-export type SiteConfig = typeof sectionFirstConstants
-import logo1 from '../../public/image/emoji-thinking.png'
-import logo2 from '../../public/image/emoji-sad.png'
-import logo3 from '../../public/image/emoji-dizzy.png'
+export type SectionFirstConstants = typeof sectionFirstConstants
+import logo1 from '/public/image/emoji-thinking.png'
+import logo2 from '/public/image/emoji-sad.png'
+import logo3 from '/public/image/emoji-dizzy.png'
 
 export const sectionFirstConstants = {
   description: [
