@@ -1,4 +1,5 @@
 import { MatchingCard } from './_components/MatchingCard'
+import { NoMatchingCard } from './_components/NoMatchingCard'
 
 export default function StudyMatchingPage() {
   return (
@@ -8,7 +9,7 @@ export default function StudyMatchingPage() {
       {/* 매칭 데이터가 없을경우 AppliedLoading 보여지도록 함 */}
       <div className="bg-white flex flex-row justify-center items-center rounded-[40px] gap-[120px]">
         <MatchingCard />
-        <MatchingCard />
+        <NoMatchingCard />
       </div>
     </div>
   )
