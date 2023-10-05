@@ -1,3 +1,4 @@
+import { Button } from '@/components'
 import levelImage from '../../../../../public/image/level-image.png'
 import Image from 'next/image'
 
@@ -54,6 +55,11 @@ export default function StudyAppliedDetailPage() {
             className="bg-primary-50 px-7 py-10 mt-5 text-black text-[14px] font-normal rounded-[20px]"
             dangerouslySetInnerHTML={{ __html: example.content }}
           />
+          <div className="flex justify-center mt-5 ">
+            <Button variant={'secondary'} className="w-[220px] rounded-[20px] mt-2 mb-4">
+              스터디 지원하기
+            </Button>
+          </div>
         </div>
       </div>
     </div>
