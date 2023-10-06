@@ -11,6 +11,31 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        '24': '24px',
+        '38': '38px',
+      },
+      margin: {
+        '35': '35px',
+        '165': '165px',
+      },
+      inset: {
+        '95': '95%',
+      },
+      width: {
+        '217': '217px',
+      },
+      height: {
+        '60': '60px',
+        header: '5vh',
+        main: '100vh',
+        introcenter: '300vh',
+      },
+      opacity: {
+        '30': '0.3',
+        '50': '0.5',
+        '70': '0.7',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -22,7 +47,10 @@ module.exports = {
           '50': '#F0F9F6',
           '100': '#BCE6D8',
           '200': '#79CDB1',
-          '300': '#43B28D',
+          '300': '#42B28D',
+          gray100: '#555555',
+          gray200: '#7A7A7A',
+          gray939: '#939393',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
