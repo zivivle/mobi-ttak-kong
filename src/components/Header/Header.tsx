@@ -19,7 +19,6 @@ export const Header = () => {
   }
   const [isModalOpen, setIsModalOpen] = useState(false)
   const { data: session } = useSession()
-  console.log(session?.user?.email)
 
   return (
     <div>
@@ -46,7 +45,7 @@ export const Header = () => {
                     onClick={() => {
                       onClickToHeaderLink(headerlink.href)
                     }}
-                    className="grid items-center font-bold text-primary-black hover:text-primary-300"
+                    className="grid items-center font-bold text-primary-black hover:text-primary-300 cursor-pointer"
                   >
                     {headerlink.title}
                   </div>
@@ -54,7 +53,7 @@ export const Header = () => {
               </div>
             </div>
             <div className="flex flex-row gap-5">
-              <Image src={beanIcon} alt="알림아이콘" width={40} height={40} className="cursor-pointer" />=
+              <Image src={beanIcon} alt="알림아이콘" width={40} height={40} className="cursor-pointer" />
               {session?.user ? (
                 <>
                   <img className="w-8 h-8 rounded-full" src={session.user.image || ''} />
