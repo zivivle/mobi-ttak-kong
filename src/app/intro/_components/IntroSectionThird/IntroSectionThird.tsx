@@ -11,8 +11,7 @@ export const IntroSectionThird = () => {
       </div>
       <div className="flex flex-col items-center justify-center mt-[200px]">
         <h1 className="font-bold text-[30px] mb-35 flex flex-col items-center justify-center">
-          <p>{siteConfig.description2}</p>
-          <p>{siteConfig.description3}</p>
+          <p>{siteConfig.description}</p>
         </h1>
         <div>
           <Button className="w-217 h-[55px] mt-[10px] rounded-[20px] text-white" fontSize={'xl'}>
