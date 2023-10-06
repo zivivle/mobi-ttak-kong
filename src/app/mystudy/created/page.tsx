@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { StudyCreatedCard } from './_components'
+import { studyCreatedConstants } from '@/constants'
 
 export default function StudyCreatedPage() {
   return (
@@ -17,10 +18,10 @@ export default function StudyCreatedPage() {
           </Link>
         </div>
         <div className=" w-[1000px] bg-white rounded-[40px] ">
-          <div className="ml-10 mt-5 text-primary-gray939 text-[12px] font-medium">
-            최소 인원이 채워지면 자동으로 마감이 돼요. <br /> 그 전에 스터디를 시작하고 싶다면, 마감하기를 통해 바로
-            스터디를 시작해보세요!
-          </div>
+          <div
+            className="ml-10 mt-5 text-primary-gray939 text-[12px] font-medium"
+            dangerouslySetInnerHTML={{ __html: studyCreatedConstants.description }}
+          />
           <div className="flex flex-row flex-wrap justify-center items-center pb-[30px] y-10 mb-[40px] gap-x-[40px]">
             <StudyCreatedCard />
             <StudyCreatedCard />
