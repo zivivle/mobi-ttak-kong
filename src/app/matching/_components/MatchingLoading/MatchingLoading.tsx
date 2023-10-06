@@ -1,5 +1,5 @@
 import { Button } from '@/components'
-import { matchingLoadingConstants } from '@/constants/matchingLoading.constants'
+import { matchingLoadingConstants } from '@/constants'
 
 import Image from 'next/image'
 

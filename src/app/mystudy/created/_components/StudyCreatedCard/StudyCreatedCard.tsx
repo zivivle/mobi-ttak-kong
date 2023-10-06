@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import editIcon from '/public/image/level-image.png'
-import levelImage from '../../../../../../public/image/emoji-bbiyak.png'
+import levelImage from '/public/image/emoji-bbiyak.png'
 
 export const StudyCreatedCard = () => {
   return (
