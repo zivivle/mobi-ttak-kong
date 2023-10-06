@@ -1,3 +1,4 @@
+'use client'
 import { Button } from '@/components'
 import { loginConstants } from '@/constants/login.constants'
 

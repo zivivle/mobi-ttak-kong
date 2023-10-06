@@ -2,6 +2,8 @@
 
 import { mainConstants } from '@/constants'
 import { SelectCard } from './_components/SelectCard/SelectCard'
+import { useState } from 'react'
+import LoginModalPage from './_components/LoginModal/LoginModal'
 
 const MyStudy = () => {
   return (
