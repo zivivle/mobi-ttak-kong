@@ -3,8 +3,9 @@ import Image from 'next/image'
 import defaultProfile from '/public/image/default-profile-image.png'
 import levelImage from '/public/image/level-image.png'
 import { StudyAppliedCardProps } from '..'
+import Link from 'next/link'
 
-export const StudyAppliedCard = ({ label, tag, ...rest }: StudyAppliedCardProps) => {
+export const StudyAppliedCard = ({ id, label, tag, ...rest }: StudyAppliedCardProps) => {
   return (
     <div className="w-[400px] bg-primary-50 rounded-[20px] p-[43px] mt-[30px]">
       <div className="mb-2 font-bold text-[16px] text-primary-gray200">{label}</div>
@@ -32,9 +33,11 @@ export const StudyAppliedCard = ({ label, tag, ...rest }: StudyAppliedCardProps)
         <p className="text-[13px] ">장소 : {rest.location}</p>
       </div>
       <div className="flex justify-end mt-[20px]">
-        <Button variant={'secondary'} fontSize={'sm'} className="w-[120px] h-[30px] rounded-[20px]">
-          자세히 보러가기
-        </Button>
+        <Link href={'/mystudy/applied/${id}'}>
+          <Button variant={'secondary'} fontSize={'sm'} className="w-[120px] h-[30px] rounded-[20px]">
+            자세히 보러가기
+          </Button>
+        </Link>
       </div>
     </div>
   )

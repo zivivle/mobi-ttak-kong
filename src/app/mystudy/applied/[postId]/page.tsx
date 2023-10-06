@@ -1,11 +1,15 @@
+'use client'
+
 import { Button } from '@/components'
 import levelImage from '../../../../../public/image/level-image.png'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function StudyAppliedDetailPage() {
-  const example = {
-    title: '우리는 프론트 마스터즈',
-    content: `🌟 프론트엔드 스터디 모집! 🌟 <br/>
+  const [testData, setTestData] = useState([
+    {
+      title: '우리는 프론트 마스터즈',
+      content: `🌟 프론트엔드 스터디 모집! 🌟 <br/>
     안녕하세요! 웹 개발의 중심, 프론트엔드에 관심 있으신 분들을 위한 스터디를 시작합니다. <br/>
     초보자부터 경험자까지, 함께 성장하고 싶은 분들의 많은 참여를 바랍니다.<br/>
     <br/>
@@ -27,7 +31,8 @@ export default function StudyAppliedDetailPage() {
     매주 주제별 강의 및 실습<br/>
     프로젝트 기반 학습으로 실제 웹사이트 제작 경험<br/>
     코드 리뷰 및 피드백 세션`,
-  }
+    },
+  ])
 
   return (
     <div className="h-auto flex justify-center items-center  bg-primary-50">
@@ -47,13 +52,13 @@ export default function StudyAppliedDetailPage() {
           </div>
 
           <div className=" mt-5 text-primary-gray939 text-[12px] font-medium">프론트엔드 스터디</div>
-          <div className=" text-black text-[24px] font-bold">{example.title}</div>
+          <div className=" text-black text-[24px] font-bold">{testData[0].title}</div>
           <div className=" mt-2 text-black text-[12px] font-bold">현재 인원 / 최소 인원 (4 / 5)</div>
           <div className=" mt-5 text-black text-[12px] font-bold">대면 스터디</div>
           <div className=" text-black text-[12px] font-medium">장소 : 성동구 전체</div>
           <div
             className="bg-primary-50 px-7 py-10 mt-5 text-black text-[14px] font-normal rounded-[20px]"
-            dangerouslySetInnerHTML={{ __html: example.content }}
+            dangerouslySetInnerHTML={{ __html: testData[0].content }}
           />
           <div className="flex justify-center mt-5 ">
             <Button variant={'secondary'} className="w-[220px] rounded-[20px] mt-2 mb-4">

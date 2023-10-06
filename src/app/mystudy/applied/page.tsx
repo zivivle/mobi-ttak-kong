@@ -38,6 +38,7 @@ export default function StudyAppliedPage() {
           {testData.length > 0 &&
             testData.map((data) => (
               <StudyAppliedCard
+                id={data.id}
                 label={data.label}
                 tag={data.tag}
                 title={data.title}
