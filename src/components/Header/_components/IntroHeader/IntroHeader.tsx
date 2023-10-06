@@ -1,6 +1,7 @@
 import mainLogo from '/public/image/logo-black.png'
 import beanIcon from '/public/image/icon-beans.png'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const IntroHeader = () => {
   return (
@@ -10,7 +11,9 @@ export const IntroHeader = () => {
         <Image src={mainLogo} alt="딱콩로고" width={40} height={40} />
       </div>
       <div className="flex flex-row">
-        <div className="grid items-center font-bold text-black">로그인</div>
+        <Link href={'/login'} className="grid items-center font-bold text-black">
+          로그인
+        </Link>
       </div>
     </div>
   )
