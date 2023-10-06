@@ -1,3 +1,18 @@
-export default function Home() {
-  return <div className="h-screen overflow-auto ">hi my name is home</div>
+'use client'
+
+import { SelectCard } from './_components/SelectCard/SelectCard'
+import { mainConstants } from '../constants/main.constants'
+
+const MyStudy = () => {
+  return (
+    <>
+      <div className="h-screen bg-primary-50 flex justify-center items-center gap-12">
+        {mainConstants.description.map((info) => (
+          <SelectCard mypageInfo={info} key={info.title} />
+        ))}
+      </div>
+    </>
+  )
 }
+
+export default MyStudy
