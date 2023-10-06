@@ -8,7 +8,7 @@ const MyStudy = () => {
     <>
       <div className="h-screen bg-primary-50 flex justify-center items-center gap-12">
         {mainConstants.description.map((info) => (
-          <SelectCard mypageInfo={info} />
+          <SelectCard mypageInfo={info} key={info.title} />
         ))}
       </div>
     </>
