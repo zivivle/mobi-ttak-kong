@@ -24,7 +24,7 @@ export const Header = () => {
         <IntroHeader />
       ) : (
         <div>
-          {isModalOpen ? <LoginModalPage /> : null}
+          {isModalOpen ? <LoginModalPage setIsModalOpen={setIsModalOpen} /> : null}
           <div className="fixed top-0 w-full h-[auto] flex justify-between pl-10 pr-14 py-2 bg-white">
             <div className="flex flex-row gap-1 py-[5px]">
               <div
@@ -55,7 +55,16 @@ export const Header = () => {
               {/* 로그인되어있는 상태에서는 로그아웃 아이콘을 보여줘야함 */}
               {/* <Image src={logoutIcon} alt="로그아웃아이콘" width={40} height={40} className="cursor-pointer" /> */}
 
-              <Image src={beanIcon} alt="로그인아이콘" width={40} height={40} className="cursor-pointer" />
+              <Image
+                onClick={() => {
+                  setIsModalOpen(true)
+                }}
+                src={beanIcon}
+                alt="로그인아이콘"
+                width={40}
+                height={40}
+                className="cursor-pointer"
+              />
             </div>
           </div>
         </div>

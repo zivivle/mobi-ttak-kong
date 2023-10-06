@@ -3,15 +3,19 @@ import { Button } from '@/components'
 import { loginConstants } from '@/constants/login.constants'
 
 import Image from 'next/image'
+import { LoginModalPageProps } from './LoginModal.type'
 
-export default function LoginModalPage() {
+export default function LoginModalPage({ setIsModalOpen }: LoginModalPageProps) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
       <div className="bg-white p-6 rounded-[40px] shadow-md ">
         <div className="flex justify-end">
           <Image
+            onClick={() => {
+              setIsModalOpen(false)
+            }}
             src={loginConstants.image.mainImage}
-            alt="beanIcon"
+            alt="closeIcon"
             width={20}
             height={20}
             className="cursor-pointer"
