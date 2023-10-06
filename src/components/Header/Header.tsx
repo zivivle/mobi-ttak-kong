@@ -8,7 +8,6 @@ import { siteConfig } from '@/constants/main'
 import Link from 'next/link'
 import { IntroHeader } from './_components/IntroHeader/IntroHeader'
 
-
 export const Header = () => {
   const pathname = usePathname()
   const isIntroPage = pathname === '/intro'
