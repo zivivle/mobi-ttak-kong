@@ -9,8 +9,12 @@ export const siteConfig = {
       href: '/',
     },
     {
+      title: '내 스터디',
+      href: '/mystudy/created',
+    },
+    {
       title: '매칭 현황',
-      href: '/login',
+      href: '/matching',
     },
     {
       title: '스터디 만들기',

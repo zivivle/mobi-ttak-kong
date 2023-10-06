@@ -49,6 +49,8 @@ module.exports = {
           '200': '#79CDB1',
           '300': '#42B28D',
           gray: '#555555',
+          gray100: '#555555',
+          gray200: '#7A7A7A',
           gray939: '#939393',
         },
         secondary: {
