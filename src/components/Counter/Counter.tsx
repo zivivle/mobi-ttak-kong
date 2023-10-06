@@ -16,7 +16,7 @@ export const Counter = ({ bgColor = 'primary-100', count = 0, onChange, minCount
     <section className="flex gap-[10px] items-center">
       <span
         className={`flex items-center justify-center p-[16px] w-[20px] h-[20px] rounded-full ${setBgColor} cursor-pointer ${
-          count === minCount && 'bg-gray-300  pointer-events-none'
+          count === minCount && 'bg-gray-400 pointer-events-none'
         }`}
         onClick={() => onClickUpAndDown('down')}
       >
@@ -25,7 +25,7 @@ export const Counter = ({ bgColor = 'primary-100', count = 0, onChange, minCount
       <span>{count}</span>
       <span
         className={`flex items-center justify-center p-[16px] w-[20px] h-[20px] rounded-full ${setBgColor} cursor-pointer ${
-          count === maxCount && 'bg-gray-300  pointer-events-none'
+          count === maxCount && 'bg-gray-400 pointer-events-none'
         }`}
         onClick={() => onClickUpAndDown('up')}
       >
