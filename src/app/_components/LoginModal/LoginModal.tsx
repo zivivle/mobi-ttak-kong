@@ -4,6 +4,7 @@ import { loginConstants } from '@/constants/login.constants'
 
 import Image from 'next/image'
 import { LoginModalPageProps } from './LoginModal.type'
+import { signIn } from 'next-auth/react'
 
 export default function LoginModalPage({ setIsModalOpen }: LoginModalPageProps) {
   return (
@@ -33,7 +34,7 @@ export default function LoginModalPage({ setIsModalOpen }: LoginModalPageProps) 
         </div>
         <div className="flex justify-center items-center m-5">
           <Button variant={'tertiary'} className="w-[300px] h-[50px] rounded-[20px] text-primary-black">
-            구글 회원가입
+            구글로 로그인하기
           </Button>
         </div>
       </div>

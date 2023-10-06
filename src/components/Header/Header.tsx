@@ -8,6 +8,7 @@ import { siteConfig } from '@/constants/main'
 import { IntroHeader } from '../IntroHeader/IntroHeader'
 import { useState } from 'react'
 import LoginModalPage from '../../app/_components/LoginModal/LoginModal'
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 export const Header = () => {
   const router = useRouter()
@@ -17,6 +18,8 @@ export const Header = () => {
     router.push(`${href}`)
   }
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { data: session } = useSession()
+  console.log(session?.user?.email)
 
   return (
     <div>
@@ -51,20 +54,20 @@ export const Header = () => {
               </div>
             </div>
             <div className="flex flex-row gap-5">
-              <Image src={beanIcon} alt="알림아이콘" width={40} height={40} className="cursor-pointer" />
-              {/* 로그인되어있는 상태에서는 로그아웃 아이콘을 보여줘야함 */}
-              {/* <Image src={logoutIcon} alt="로그아웃아이콘" width={40} height={40} className="cursor-pointer" /> */}
-
-              <Image
-                onClick={() => {
-                  setIsModalOpen(true)
-                }}
-                src={beanIcon}
-                alt="로그인아이콘"
-                width={40}
-                height={40}
-                className="cursor-pointer"
-              />
+              <Image src={beanIcon} alt="알림아이콘" width={40} height={40} className="cursor-pointer" />=
+              {session?.user ? (
+                <>
+                  <img className="w-8 h-8 rounded-full" src={session.user.image || ''} />
+                  <p className="text-sky-600"> {session.user.email}</p>
+                  <button className="text-red-500" onClick={() => signOut()}>
+                    로그아웃
+                  </button>
+                </>
+              ) : (
+                <button className="text-green-600" onClick={() => signIn()}>
+                  로그인
+                </button>
+              )}
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import '@/styles/global.css'
 import type { Metadata } from 'next'
 
 import localFont from 'next/font/local'
+import AuthSession from './api/auth/[...nextauth]/AuthSession'
 
 const mainFont = localFont({
   src: './fonts/PretendardVariable.woff2',
@@ -22,8 +23,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
       </head>
       <body className={mainFont.className}>
-        <Header />
-        {children}
+        <AuthSession>
+          <Header />
+          {children}
+        </AuthSession>
       </body>
     </html>
   )
