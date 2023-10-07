@@ -2,9 +2,13 @@
 
 import { mainConstants } from '@/constants'
 import { SelectCard } from './_components/SelectCard/SelectCard'
-import LoginModalPage from './_components/LoginModal/LoginModal'
+import { usePathname } from 'next/navigation'
+import { useSession } from 'next-auth/react'
 
 const MyStudy = () => {
+  const pathName = usePathname()
+  const { data: session } = useSession()
+
   return (
     <>
       <div className="h-screen bg-primary-50 flex justify-center items-center gap-12">
