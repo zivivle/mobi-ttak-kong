@@ -54,35 +54,38 @@ export const Header = () => {
                 ))}
               </div>
             </div>
-            <div className="flex flex-row gap-5">
-              <Image src={beanIcon} alt="알림아이콘" width={40} height={40} className="cursor-pointer" />
+            <div className="flex flex-row justify-center items-center gap-2">
               {!session ? (
-                <Image
-                  onClick={() => {
-                    setIsModalOpen(true)
-                  }}
-                  src={mainLogo}
-                  alt="로그인 아이콘"
-                  width={40}
-                  height={40}
-                  className="cursor-pointer"
-                />
+                <div>
+                  <div
+                    onClick={() => {
+                      setIsModalOpen(true)
+                    }}
+                    className="flex flex-col justify-center items-center cursor-pointer"
+                  >
+                    <span class="material-icons-outlined">login</span>
+                    <p className=" font-semibold ml-1 text-[14px]">로그인</p>
+                  </div>
+                </div>
               ) : (
                 <div className="flex flex-row justify-center items-center gap-1">
                   <img
-                    className="w-[30px] h-[30px] rounded-[50%]"
+                    className=" w-[30px] h-[30px] rounded-[50%]"
                     src={session.user?.image || null || undefined}
                     alt="유저 이미지"
                   />
                   <p className="text-sky-600">{session.user?.name}님 반갑습니다!</p>
-                  <Image
+                  <div className="flex flex-col justify-end items-center ml-4 cursor-pointer">
+                    <span class="material-icons-outlined ">notifications</span>
+                    <p className="text-[14px] font-semibold">알람</p>
+                  </div>
+                  <div
                     onClick={() => signOut()}
-                    src={beanIcon}
-                    alt="로그아웃 아이콘"
-                    width={40}
-                    height={40}
-                    className="cursor-pointer"
-                  />
+                    className="ml-2 flex flex-col justify-center items-center cursor-pointer"
+                  >
+                    <span className="material-icons-outlined mb-[1px]">logout</span>
+                    <p className="text-[14px] font-semibold">로그아웃</p>
+                  </div>
                 </div>
               )}
             </div>
