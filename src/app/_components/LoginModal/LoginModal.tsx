@@ -1,11 +1,9 @@
 'use client'
-import { Button } from '@/components'
-import { loginConstants } from '@/constants/login.constants'
 
+import { loginConstants } from '@/constants/login.constants'
 import Image from 'next/image'
 import { LoginModalPageProps } from './LoginModal.type'
-import { signIn } from 'next-auth/react'
-import { SignInOutButton } from '..'
+import { NaverSignInOutButton } from '..'
 
 export default function LoginModalPage({ setIsModalOpen }: LoginModalPageProps) {
   return (
@@ -33,8 +31,8 @@ export default function LoginModalPage({ setIsModalOpen }: LoginModalPageProps) 
         <div className="flex justify-center items-center">
           <Image src={loginConstants.image.subImage} alt="descriptionImage" width={160} className="m-5" />
         </div>
-        <div className="flex justify-center items-center m-5">
-          <SignInOutButton />
+        <div className="flex flex-col justify-center items-center m-5">
+          <NaverSignInOutButton />
         </div>
       </div>
     </div>

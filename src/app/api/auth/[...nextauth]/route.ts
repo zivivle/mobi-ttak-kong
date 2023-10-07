@@ -8,10 +8,6 @@ const handler = NextAuth({
       clientId: process.env.NEXT_PUBLIC_NAVER_CLIENT_ID || '',
       clientSecret: process.env.NEXT_PUBLIC_NAVER_SECRET || '',
     }),
-    // KakaoProvider({
-    //   clientId: process.env.KAKAO_CLIENT_ID || '',
-    //   clientSecret: process.env.KAKAO_SECRET || '',
-    // }),
   ],
 })
 
