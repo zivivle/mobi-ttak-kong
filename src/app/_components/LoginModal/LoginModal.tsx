@@ -11,16 +11,14 @@ export default function LoginModalPage({ setIsModalOpen }: LoginModalPageProps) 
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-30">
       <div className="bg-white p-6 rounded-[40px] shadow-md ">
         <div className="flex justify-end">
-          <Image
+          <span
             onClick={() => {
               setIsModalOpen(false)
             }}
-            src={loginConstants.image.mainImage}
-            alt="closeIcon"
-            width={20}
-            height={20}
-            className="cursor-pointer"
-          />
+            className="material-icons-outlined cursor-pointer"
+          >
+            close
+          </span>
         </div>
         <div className="flex justify-center items-center gap-1">
           <Image src={loginConstants.image.mainImage} alt="beanIcon" width={35} height={35} />
