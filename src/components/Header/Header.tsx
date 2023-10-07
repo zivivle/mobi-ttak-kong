@@ -17,6 +17,8 @@ export const Header = () => {
   const onClickToHeaderLink = (href: string) => {
     router.push(`${href}`)
   }
+
+  // isModalOpen은 추후 전역상태 관리해볼 변경 예정
   const [isModalOpen, setIsModalOpen] = useState(false)
   const { data: session } = useSession()
 
