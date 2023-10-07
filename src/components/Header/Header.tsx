@@ -63,7 +63,7 @@ export const Header = () => {
                     }}
                     className="flex flex-col justify-center items-center cursor-pointer"
                   >
-                    <span class="material-icons-outlined">login</span>
+                    <span className="material-icons-outlined">login</span>
                     <p className=" font-semibold ml-1 text-[14px]">로그인</p>
                   </div>
                 </div>
@@ -76,7 +76,7 @@ export const Header = () => {
                   />
                   <p className="text-sky-600">{session.user?.name}님 반갑습니다!</p>
                   <div className="flex flex-col justify-end items-center ml-4 cursor-pointer">
-                    <span class="material-icons-outlined ">notifications</span>
+                    <span className="material-icons-outlined ">notifications</span>
                     <p className="text-[14px] font-semibold">알람</p>
                   </div>
                   <div
