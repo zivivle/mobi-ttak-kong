@@ -1,6 +1,5 @@
 import NextAuth from 'next-auth'
 import NaverProvider from 'next-auth/providers/naver'
-import KakaoProvider from 'next-auth/providers/kakao'
 
 const handler = NextAuth({
   providers: [

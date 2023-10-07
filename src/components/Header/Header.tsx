@@ -8,6 +8,7 @@ import { siteConfig } from '@/constants/main'
 import { IntroHeader } from '../IntroHeader/IntroHeader'
 import { useState } from 'react'
 import LoginModalPage from '../../app/_components/LoginModal/LoginModal'
+import { signOut, useSession } from 'next-auth/react'
 
 export const Header = () => {
   const router = useRouter()
@@ -17,6 +18,7 @@ export const Header = () => {
     router.push(`${href}`)
   }
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { data: session } = useSession()
 
   return (
     <div>
@@ -52,16 +54,35 @@ export const Header = () => {
             </div>
             <div className="flex flex-row gap-5">
               <Image src={beanIcon} alt="알림아이콘" width={40} height={40} className="cursor-pointer" />
-              <Image
-                onClick={() => {
-                  setIsModalOpen(true)
-                }}
-                src={beanIcon}
-                alt="알림아이콘"
-                width={40}
-                height={40}
-                className="cursor-pointer"
-              />
+              {!session ? (
+                <Image
+                  onClick={() => {
+                    setIsModalOpen(true)
+                  }}
+                  src={mainLogo}
+                  alt="로그인 아이콘"
+                  width={40}
+                  height={40}
+                  className="cursor-pointer"
+                />
+              ) : (
+                <div className="flex flex-row justify-center items-center gap-1">
+                  <img
+                    className="w-[30px] h-[30px] rounded-[50%]"
+                    src={session.user?.image || null || undefined}
+                    alt="유저 이미지"
+                  />
+                  <p className="text-sky-600">{session.user?.name}님 반갑습니다!</p>
+                  <Image
+                    onClick={() => signOut()}
+                    src={beanIcon}
+                    alt="로그아웃 아이콘"
+                    width={40}
+                    height={40}
+                    className="cursor-pointer"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>

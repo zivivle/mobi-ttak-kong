@@ -3,7 +3,8 @@
 import { loginConstants } from '@/constants/login.constants'
 import Image from 'next/image'
 import { LoginModalPageProps } from './LoginModal.type'
-import { NaverSignInOutButton } from '..'
+import { NaverSignInOutButton } from './_components/NaverSignInOutButton'
+import { signIn } from 'next-auth/react'
 
 export default function LoginModalPage({ setIsModalOpen }: LoginModalPageProps) {
   return (
@@ -32,7 +33,7 @@ export default function LoginModalPage({ setIsModalOpen }: LoginModalPageProps) 
           <Image src={loginConstants.image.subImage} alt="descriptionImage" width={160} className="m-5" />
         </div>
         <div className="flex flex-col justify-center items-center m-5">
-          <NaverSignInOutButton />
+          <NaverSignInOutButton signIn={signIn} />
         </div>
       </div>
     </div>
