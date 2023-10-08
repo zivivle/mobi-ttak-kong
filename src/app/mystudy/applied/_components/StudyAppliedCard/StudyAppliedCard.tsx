@@ -21,7 +21,7 @@ export const StudyAppliedCard = ({ studyDatas }: StudyAppliedCardProps) => {
         <div key={studyData._id} className="w-[400px] bg-primary-50 rounded-[20px] p-[43px] mt-[30px]">
           <div className="mb-2 font-bold text-[16px] text-primary-gray200">{studyData.field}</div>
           <div className="bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white inline-block rounded-[20px]">
-            detailField
+            {studyData.detailField}
           </div>
           <div className="mt-[18px] flex flex-row items-center h-[35px] ">
             <Image src={defaultProfile} alt="임시 이미지" width={45} height={40} />
@@ -55,7 +55,7 @@ export const StudyAppliedCard = ({ studyDatas }: StudyAppliedCardProps) => {
           </div>
         </div>
       ))}
-      <StudyAppliedEmptyDataCard />
+      {studyDatas.isAppliedStudy.length % 2 === 1 && <StudyAppliedEmptyDataCard />}
     </div>
   )
 }
