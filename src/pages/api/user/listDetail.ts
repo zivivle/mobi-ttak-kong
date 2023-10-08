@@ -3,7 +3,6 @@ import { connectDB } from '@/utils/database'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function updateUserhandler(request: NextApiRequest, response: NextApiResponse) {
-  console.log('request.query', request.query)
   try {
     const { studyDataId } = request.query
 

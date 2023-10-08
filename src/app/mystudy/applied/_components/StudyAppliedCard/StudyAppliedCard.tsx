@@ -17,7 +17,7 @@ export const StudyAppliedCard = ({ studyDatas }: StudyAppliedCardProps) => {
   return (
     <div className=" w-[950px] bg-white flex flex-row flex-wrap justify-center items-center rounded-[40px] pb-[30px] mb-[40px] gap-x-[40px]">
       {studyDatas.isAppliedStudy.map((studyData) => (
-        <div key={studyData._id} className="w-[400px] bg-primary-50 rounded-[20px] p-[43px] mt-[30px]">
+        <div key={studyData.title} className="w-[400px] bg-primary-50 rounded-[20px] p-[43px] mt-[30px]">
           <div className="mb-2 font-bold text-[16px] text-primary-gray200">{studyData.field}</div>
           <div className="bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white inline-block rounded-[20px]">
             {studyData.detailField}

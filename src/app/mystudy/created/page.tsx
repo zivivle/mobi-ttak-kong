@@ -4,27 +4,33 @@ import levelImage from '/public/image/emoji-bbiyak.png'
 import Link from 'next/link'
 import { StudyCreatedCard } from './_components'
 import { studyCreatedConstants } from '@/constants'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { UserDataType, UserStudyDataType } from '@/types'
 
 export default function StudyCreatedPage() {
-  const [testData, setTestData] = useState([
-    {
-      id: `${Math.floor(Date.now())}${Math.floor(Math.random() * 1000000)}`,
-      title: '우리는 프론트 마스터즈',
-      label: '프론트엔드 스터디',
-      content:
-        '안녕하세요! 웹 개발의 중심, 프론트엔드에 관심 있으신 분들을 위한 스터디를 시작합니다. 초보자부터 경험자까지, 함께 성장하고 싶은 분들의 많은 참여를 바랍니다.',
-      nowMemberCount: 4,
-      minMemberCount: 5,
-      levelImage,
-      level: '초보',
-      tag: 'IT / 프로그래밍',
-      isClosing: false,
-    },
-  ])
+  const [userStudyData, setUserStudyData] = useState<UserDataType[]>([])
+  const studyDatas: UserStudyDataType = userStudyData[0]
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/api/user/list`)
+        if (!response.ok) {
+          throw new Error('Network response was not ok')
+        }
+        const data = await response.json()
+        setUserStudyData(data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    fetchData()
+  }, [])
+  console.log(userStudyData[0].isCreatedStudy)
 
   return (
-    <div className="h-screen flex justify-center items-center  bg-primary-50">
+    <div className="h-screen f.isCreatedStudy items-center  bg-primary-50">
       <div
         className="
          h-auto flex flex-col px-[100px]"
@@ -43,20 +49,7 @@ export default function StudyCreatedPage() {
             dangerouslySetInnerHTML={{ __html: studyCreatedConstants.description }}
           />
           <div className="flex flex-row flex-wrap justify-center items-center pb-[30px] y-10 mb-[40px] gap-x-[40px]">
-            {testData.map((data) => (
-              <StudyCreatedCard
-                key={data.id}
-                title={data.title}
-                label={data.label}
-                content={data.content}
-                nowMemberCount={data.nowMemberCount}
-                minMemberCount={data.minMemberCount}
-                levelImage={data.levelImage}
-                level={data.level}
-                tag={data.tag}
-                isClosing={data.isClosing}
-              />
-            ))}
+            <StudyCreatedCard />
           </div>
         </div>
       </div>
