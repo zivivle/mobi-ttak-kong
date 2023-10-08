@@ -1,4 +1,4 @@
-export interface StudyAppDetailType {
-  title: string
-  content: string
+export interface StudyAppliedDetailProps {
+  params: { postId: string }
+  searchParams: {}
 }

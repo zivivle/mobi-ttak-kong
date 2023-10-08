@@ -28,10 +28,10 @@ export default function StudyMatchingPage() {
       >
         {testData.length > 0 &&
           testData.map((data) => (
-            <>
-              <MatchingCard key={data.id} label={data.label} title={data.title} content={data.content} />
+            <div key={data.id}>
+              <MatchingCard label={data.label} title={data.title} content={data.content} />
               <NoMatchingCard />
-            </>
+            </div>
           ))}
       </div>
     </div>
