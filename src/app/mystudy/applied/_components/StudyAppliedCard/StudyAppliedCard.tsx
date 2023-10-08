@@ -9,11 +9,10 @@ import { StudyAppliedCardProps } from '..'
 import { StudyAppliedEmptyDataCard } from '../StudyAppliedEmptyDataCard/StudyAppliedEmptyDataCard'
 
 export const StudyAppliedCard = ({ studyDatas }: StudyAppliedCardProps) => {
-  // console.log(studyDatas)
-  // const router = useRouter()
-  // const onClickToDetailPage = () => {
-  //   router.push(`/mystudy/applied/${_id}`)
-  // }
+  const router = useRouter()
+  const onClickToDetailPage = (id: number) => {
+    router.push(`/mystudy/applied/${studyDatas._id}?appliedDataId=${id}`)
+  }
 
   return (
     <div className=" w-[950px] bg-white flex flex-row flex-wrap justify-center items-center rounded-[40px] pb-[30px] mb-[40px] gap-x-[40px]">
@@ -45,7 +44,9 @@ export const StudyAppliedCard = ({ studyDatas }: StudyAppliedCardProps) => {
           </div>
           <div className="flex justify-end mt-[20px]">
             <Button
-              // onClick={onClickToDetailPage}
+              onClick={() => {
+                onClickToDetailPage(studyData.id)
+              }}
               variant={'secondary'}
               fontSize={'sm'}
               className="w-[120px] h-[30px] rounded-[20px]"
