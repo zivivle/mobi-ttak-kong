@@ -6,6 +6,7 @@ import defaultProfile from '/public/image/default-profile-image.png'
 import levelImage from '/public/image/level-image.png'
 import { useRouter } from 'next/navigation'
 import { StudyAppliedCardProps } from '..'
+import { StudyAppliedEmptyDataCard } from '../StudyAppliedEmptyDataCard/StudyAppliedEmptyDataCard'
 
 export const StudyAppliedCard = ({ studyDatas }: StudyAppliedCardProps) => {
   // console.log(studyDatas)
@@ -54,6 +55,7 @@ export const StudyAppliedCard = ({ studyDatas }: StudyAppliedCardProps) => {
           </div>
         </div>
       ))}
+      <StudyAppliedEmptyDataCard />
     </div>
   )
 }

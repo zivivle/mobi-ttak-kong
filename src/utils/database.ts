@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb'
 // Connect MongoDB
-const url = 'mongodb+srv://admin:qwert12345@clusterzivivle.6tviwzb.mongodb.net/?retryWrites=true&w=majority'
+const url = process.env.MONGODB_URL
 
 if (!url) {
   throw new Error('The MONGODB_URL environment variable is not defined')
