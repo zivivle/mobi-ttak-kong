@@ -1,27 +1,13 @@
 'use client'
 
-import levelImage from '/public/image/emoji-bbiyak.png'
 import { StudyCreatedCard } from './_components'
 import { studyCreatedConstants } from '@/constants'
-import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { userCreatedStudyData } from '@/mocks'
+import { StudyCreatedEmptyCard } from './_components/StudyCreatedEmptyCard'
 
 export default function StudyCreatedPage() {
-  const [testData, setTestData] = useState([
-    {
-      id: `${Math.floor(Date.now())}${Math.floor(Math.random() * 1000000)}`,
-      title: '우리는 프론트 마스터즈',
-      label: '프론트엔드 스터디',
-      content:
-        '안녕하세요! 웹 개발의 중심, 프론트엔드에 관심 있으신 분들을 위한 스터디를 시작합니다. 초보자부터 경험자까지, 함께 성장하고 싶은 분들의 많은 참여를 바랍니다.',
-      nowMemberCount: 4,
-      minMemberCount: 5,
-      levelImage,
-      level: '초보',
-      tag: 'IT / 프로그래밍',
-      isClosing: false,
-    },
-  ])
+  const studyData = userCreatedStudyData
 
   const router = useRouter()
 
@@ -30,7 +16,13 @@ export default function StudyCreatedPage() {
   }
 
   return (
-    <div className="h-screen flex justify-center items-center  bg-primary-50">
+    <div
+      className={
+        studyData.length >= 3
+          ? 'h-auto flex justify-center items-center pt-[70px] bg-primary-50'
+          : 'h-[92vh] flex justify-center items-center bg-primary-50'
+      }
+    >
       <div
         className="
          h-auto flex flex-col px-[100px]"
@@ -51,20 +43,23 @@ export default function StudyCreatedPage() {
             dangerouslySetInnerHTML={{ __html: studyCreatedConstants.description }}
           />
           <div className="flex flex-row flex-wrap justify-center items-center pb-[30px] y-10 mb-[40px] gap-x-[40px]">
-            {testData.map((data) => (
+            {studyData.map((data) => (
               <StudyCreatedCard
                 key={data.id}
+                id={data.id}
+                field={data.field}
+                detailField={data.detailField}
                 title={data.title}
-                label={data.label}
                 content={data.content}
-                nowMemberCount={data.nowMemberCount}
                 minMemberCount={data.minMemberCount}
-                levelImage={data.levelImage}
+                nowMemberCount={data.nowMemberCount}
                 level={data.level}
-                tag={data.tag}
-                isClosing={data.isClosing}
+                isInPerson={data.isInPerson}
+                location={data.location}
+                isClosed={data.isClosed}
               />
             ))}
+            {studyData.length === 0 || (studyData.length % 2 === 1 && <StudyCreatedEmptyCard />)}
           </div>
         </div>
       </div>
