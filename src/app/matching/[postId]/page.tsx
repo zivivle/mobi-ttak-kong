@@ -23,12 +23,12 @@ export default function StudyMatchingDetailPage(props: StudyMatchingDetailPagePr
   const detailInfo: StudyDataType | undefined = matchedStudies.find((data) => data.id === props.params.postId)
 
   return (
-    <div className="h-auto flex justify-center items-center  bg-primary-50">
+    <div className="h-screen flex justify-center items-center  bg-primary-50">
       <div
         className="
          h-auto flex flex-col px-[100px]"
       >
-        <div className=" w-[1000px] bg-white rounded-[20px] p-7 mt-[80px] mb-[40px] ">
+        <div className=" w-[1000px] bg-white rounded-[20px] p-7  mb-[40px] ">
           <div className="flex flex-row items-center mt-4">
             <div className=" bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white rounded-[20px] inline-block">
               <p>{detailInfo?.field}</p>
