@@ -18,6 +18,12 @@
 
 <br>
 
+<h2>디자인 기획</h2>
+
+- [피그마 주소](https://www.figma.com/file/3N2kj9eFCT7NOqL2sCVUXR/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%A7%A4%EC%B9%AD-%EC%9B%B9-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?type=design&node-id=0-1&mode=design&t=7h0nMWEJrxquE3J7-0)
+
+<br>
+
 <h2>기한</h2>
  <p>2023.10.02 ~ 2023.10.09</p>
  </p>
