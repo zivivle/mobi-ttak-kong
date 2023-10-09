@@ -11,7 +11,7 @@ export interface StudyDataType {
   level: string
   isInPerson: boolean
   location: string
-  isClosed: boolean
-  isAppliedMember: UserDataType[]
-  isMember: UserDataType[]
+  isClosed?: boolean
+  isAppliedMember?: UserDataType[]
+  isMember?: UserDataType[]
 }
