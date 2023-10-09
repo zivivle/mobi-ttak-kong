@@ -2,10 +2,10 @@
 import Link from 'next/link'
 import { StudyAppliedCard } from './_components'
 import { useEffect, useState } from 'react'
-import { UserDataType, UserStudyDataType } from '@/types'
+import { UserStudyDataType } from '@/types'
 
 export default function StudyAppliedPage() {
-  const [userStudyData, setUserStudyData] = useState<UserDataType[]>([])
+  const [userStudyData, setUserStudyData] = useState<UserStudyDataType[]>([])
   const studyDatas: UserStudyDataType = userStudyData[0]
   useEffect(() => {
     const fetchData = async () => {

@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { StudyCreatedCard } from './_components'
 import { studyCreatedConstants } from '@/constants'
 import { useEffect, useState } from 'react'
-import { StudyDataType, UserDataType } from '@/types'
+import { StudyDataType, UserStudyDataType } from '@/types'
 
 export default function StudyCreatedPage() {
-  const [userStudyData, setUserStudyData] = useState<UserDataType[]>([])
+  const [userStudyData, setUserStudyData] = useState<UserStudyDataType[]>([])
   const studyDatas: StudyDataType[] = userStudyData[0]?.isCreatedStudy
 
   useEffect(() => {
