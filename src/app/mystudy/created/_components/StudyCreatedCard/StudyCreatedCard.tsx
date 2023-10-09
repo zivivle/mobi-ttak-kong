@@ -4,9 +4,20 @@ import Image from 'next/image'
 import levelIcon from '/public/image/level-image.png'
 import { StudyDataType } from '@/types'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 export const StudyCreatedCard = ({ field, detailField, ...rest }: StudyDataType) => {
   // const router = useRouter()
+  const [isClosed, setIsClosed] = useState(rest.isClosed)
+
+  const onClickIsClosedToggle = () => {
+    if (isClosed === true) {
+      setIsClosed(false)
+    }
+    if (isClosed === false) {
+      setIsClosed(true)
+    }
+  }
 
   // 스터디 수정페이지 완성되면 연결하기
   // const onClickToCreatedStudyEditPage = () => {
@@ -46,12 +57,18 @@ export const StudyCreatedCard = ({ field, detailField, ...rest }: StudyDataType)
           </div>
         </div>
       </div>
-      {rest.isClosed ? (
-        <div className="bg-primary-gray200 p-4 w-[10px] mt-[60px] mb-[30px] flex justify-center items-center inline-block text-white font-bold rounded-r-[15px] hover:bg-opacity-70 cursor-pointer transition-all duration-300">
+      {isClosed ? (
+        <div
+          onClick={onClickIsClosedToggle}
+          className="bg-primary-gray200 p-4 w-[10px] mt-[60px] mb-[30px] flex justify-center items-center inline-block text-white font-bold rounded-r-[15px] hover:bg-opacity-70 cursor-pointer transition-all duration-300"
+        >
           마감완료
         </div>
       ) : (
-        <div className="bg-primary-300 p-4 w-[10px] mt-[60px] mb-[30px] flex justify-center items-center inline-block text-white font-bold rounded-r-[15px] hover:bg-opacity-70 cursor-pointer transition-all duration-300">
+        <div
+          onClick={onClickIsClosedToggle}
+          className="bg-primary-300 p-4 w-[10px] mt-[60px] mb-[30px] flex justify-center items-center inline-block text-white font-bold rounded-r-[15px] hover:bg-opacity-70 cursor-pointer transition-all duration-300"
+        >
           마감하기
         </div>
       )}
