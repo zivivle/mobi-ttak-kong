@@ -1,4 +1,3 @@
-export interface NextStepButtonProps {
-  onClick: VoidFunction
-  disabled?: boolean
-}
+import type { ButtonHTMLAttributes } from 'react'
+
+export interface NextStepButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
