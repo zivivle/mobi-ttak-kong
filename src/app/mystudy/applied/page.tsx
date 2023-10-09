@@ -47,7 +47,7 @@ export default function StudyAppliedPage() {
                 isClosed={data.isClosed}
               />
             ))}
-          {studyData.length % 2 === 1 && <StudyAppliedEmptyDataCard />}
+          {studyData.length === 0 || (studyData.length % 2 === 1 && <StudyAppliedEmptyDataCard />)}
         </div>
       </div>
     </div>
