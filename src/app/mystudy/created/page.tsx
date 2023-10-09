@@ -30,10 +30,10 @@ export default function StudyCreatedPage() {
   if (!studyDatas) return
 
   return (
-    <div className="h-screen justify-center items-center  bg-primary-50">
+    <div className="h-screen flex justify-center items-center bg-primary-50">
       <div
         className="
-          h-auto flex flex-col pt-[100px] px-[100px]"
+          h-auto flex flex-col px-[100px]"
       >
         <div className="flex flex-row justify-start items-center ml-10 font-semibold">
           <div className="bg-white px-7 py-3 rounded-t-[20px]">내가 만든 스터디</div>
