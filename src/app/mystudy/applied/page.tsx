@@ -7,7 +7,6 @@ import { UserDataType, UserStudyDataType } from '@/types'
 export default function StudyAppliedPage() {
   const [userStudyData, setUserStudyData] = useState<UserDataType[]>([])
   const studyDatas: UserStudyDataType = userStudyData[0]
-
   useEffect(() => {
     const fetchData = async () => {
       try {
