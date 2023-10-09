@@ -6,3 +6,7 @@ export type StudyFieldsProps =
   | '이직/면접'
   | '독서/글쓰기'
   | '기타'
+
+export type StudyDetailFieldsProps = {
+  [key in StudyFieldsProps]: string[]
+}
