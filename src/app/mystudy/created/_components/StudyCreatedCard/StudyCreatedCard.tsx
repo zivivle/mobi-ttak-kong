@@ -38,7 +38,7 @@ export const StudyCreatedCard = ({ studyData, studyDataId }: StudyCreatedCardPro
           </div>
         </div>
       </div>
-      {/* {rest.isClosing ? (
+      {studyData.isClosed ? (
         <div className="bg-primary-gray200 p-4 w-[10px] mt-[60px] mb-[30px] flex justify-center items-center inline-block text-white font-bold rounded-r-[15px] hover:bg-opacity-70 cursor-pointer transition-all duration-300">
           마감완료
         </div>
@@ -46,10 +46,7 @@ export const StudyCreatedCard = ({ studyData, studyDataId }: StudyCreatedCardPro
         <div className="bg-primary-300 p-4 w-[10px] mt-[60px] mb-[30px] flex justify-center items-center inline-block text-white font-bold rounded-r-[15px] hover:bg-opacity-70 cursor-pointer transition-all duration-300">
           마감하기
         </div>
-      )} */}
-      <div className="bg-primary-300 p-4 w-[10px] mt-[60px] mb-[30px] flex justify-center items-center inline-block text-white font-bold rounded-r-[15px] hover:bg-opacity-70 cursor-pointer transition-all duration-300">
-        마감하기
-      </div>
+      )}
     </div>
   )
 }
