@@ -1,28 +1,34 @@
 import { RadioGroup, RadioGroupItem } from '@/components'
+import { useState } from 'react'
 import { QuestionContainer, SearchLodationModal } from '../../_components'
 import { InnerSection, NextStepButton } from '../_components'
 import type { CreateStudyPageProps } from '../_types'
-import { useState } from 'react'
 
 export const Step4Page = ({ nextStep }: CreateStudyPageProps) => {
+  const [isInPerson, setInPerson] = useState<string | undefined>(undefined)
   const [address, setAddress] = useState('')
+
   const [addressModalOpen, setAddressModalOpen] = useState(false)
+
+  const onClickIsInPerson = (isIn: string) => {
+    setInPerson(isIn)
+  }
 
   return (
     <QuestionContainer title="혹시 원하는 스터디 장소가 있나요?">
       <InnerSection subtitle="대면 / 비대면을 선택해주세요.">
-        <RadioGroup defaultValue="offline" className="flex gap-[30px]">
+        <RadioGroup defaultValue="true" className="flex gap-[30px]" onValueChange={onClickIsInPerson}>
           <div className="flex items-center space-x-2">
-            <label htmlFor="offline" className="cursor-pointer">
+            <label htmlFor="true" className="cursor-pointer">
               대면 스터디
             </label>
-            <RadioGroupItem value="offline" id="offline" />
+            <RadioGroupItem value="true" id="true" />
           </div>
           <div className="flex items-center space-x-2">
-            <label htmlFor="online" className="cursor-pointer">
+            <label htmlFor="false" className="cursor-pointer">
               비대면 스터디
             </label>
-            <RadioGroupItem value="online" id="online" />
+            <RadioGroupItem value="false" id="false" />
           </div>
         </RadioGroup>
       </InnerSection>
@@ -42,7 +48,7 @@ export const Step4Page = ({ nextStep }: CreateStudyPageProps) => {
       </InnerSection>
 
       <div className="flex justify-end">
-        <NextStepButton onClick={nextStep} />
+        <NextStepButton onClick={nextStep} disabled={!isInPerson || !address} />
       </div>
     </QuestionContainer>
   )
