@@ -1,9 +1,18 @@
+'use client'
+
 import Image from 'next/image'
-import editIcon from '/public/image/level-image.png'
 import levelIcon from '/public/image/level-image.png'
 import { StudyDataType } from '@/types'
+import { useRouter } from 'next/navigation'
 
 export const StudyCreatedCard = ({ field, detailField, ...rest }: StudyDataType) => {
+  // const router = useRouter()
+
+  // 스터디 수정페이지 완성되면 연결하기
+  // const onClickToCreatedStudyEditPage = () => {
+  //   router.push(`/mystudy/create`)
+  // }
+
   return (
     <div className="flex flex-row">
       <div className="w-[420px] bg-primary-50 rounded-[20px] p-[25px] mt-[30px] flex flex-row">
@@ -25,7 +34,8 @@ export const StudyCreatedCard = ({ field, detailField, ...rest }: StudyDataType)
         </div>
         <div className="w-[340px]">
           <div className="flex justify-end">
-            <Image src={editIcon} alt="임시 이미지" width={20} height={10} />
+            {/* 스터디 수정페이지 이동 여기 연결 */}
+            <span className="material-icons-outlined cursor-pointer">edit_note</span>
           </div>
           <div className="bg-white rounded-[50%] ml-7 px-2 py-3 flex flex-col justify-center items-center mt-[20px]">
             <Image src={levelIcon} alt="레벨 아이콘" width={50} height={50} />

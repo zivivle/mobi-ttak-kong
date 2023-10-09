@@ -43,8 +43,9 @@ export default function StudyAppliedDetailPage(props: StudyAppliedDetailType) {
             />
           ) : null}
           <div className="flex justify-center mt-5 ">
+            {/* 안내 모달 뜨기 */}
             <Button variant={'secondary'} className="w-[220px] rounded-[20px] mt-2 mb-4">
-              스터디 지원하기
+              스터디 지원 취소하기
             </Button>
           </div>
         </div>
