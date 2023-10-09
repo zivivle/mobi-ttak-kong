@@ -57,7 +57,7 @@ export const Step2Page = ({ nextStep }: CreateStudyPageProps) => {
           />
         </InnerSection>
         <div className="flex justify-end">
-          <NextStepButton type="button" disabled={!getValues('title') || !isValid} />
+          <NextStepButton type="button" disabled={!getValues('title') || !getValues('content') || !isValid} />
         </div>
       </QuestionContainer>
     </form>
