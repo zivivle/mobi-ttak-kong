@@ -18,7 +18,7 @@ export const siteConfig = {
     },
     {
       title: '스터디 만들기',
-      href: '/',
+      href: '/study/create',
     },
   ],
 }

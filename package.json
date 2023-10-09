@@ -23,6 +23,7 @@
     "lucide-react": "^0.282.0",
     "next": "latest",
     "next-auth": "^4.23.2",
+    "radix-ui": "^1.0.1",
     "react": "latest",
     "react-dom": "latest",
     "tailwind-merge": "^1.14.0",

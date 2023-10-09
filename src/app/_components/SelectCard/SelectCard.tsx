@@ -15,7 +15,6 @@ export const SelectCard = ({ mypageInfo }: { mypageInfo: SelectCardProps }) => {
     router.push('/study/create')
   }
 
-  // 매칭 등록 페이지 완료되면 적용 예정
   // const onClickToStudyMatchPage = () => {
   //   router.push('/study/match')
   // }
