@@ -1,6 +1,5 @@
 export * from './Button'
 export * from './Counter'
-export * from './Header'
 export * from './Input'
 export * from './Progress'
 export * from './RadioGroup'

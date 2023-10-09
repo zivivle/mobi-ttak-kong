@@ -7,8 +7,15 @@ import Image from 'next/image'
 import bgImage from '/public/image/intro-bg1.webp'
 import { useRef } from 'react'
 import { useSmoothScroll } from '@/hooks/useSmoothScroll'
+import { useRouter } from 'next/navigation'
 
 export default function IntroPage() {
+  const router = useRouter()
+
+  const onClickToMain = () => {
+    router.push('/')
+  }
+
   // 섹션들에 대한 참조(ref) 생성
   const refFirst = useRef<HTMLDivElement>(null)
   const refSecond = useRef<HTMLDivElement>(null)
@@ -46,7 +53,7 @@ export default function IntroPage() {
         <div className="ml-165">
           <h1 className="font-bold text-38 mb-35">{siteConfig.description}</h1>
           <div>
-            <Button className="w-217 h-60 text-white rounded-[20px]" fontSize={'xl'}>
+            <Button onClick={onClickToMain} className="w-217 h-60 text-white rounded-[20px]" fontSize={'xl'}>
               딱콩 시작하기
             </Button>
           </div>
@@ -62,7 +69,7 @@ export default function IntroPage() {
         <IntroSectionSecond />
       </div>
       <div ref={refThird}>
-        <IntroSectionThird />
+        <IntroSectionThird onClickToMain={onClickToMain} />
       </div>
     </div>
   )

@@ -1,10 +1,10 @@
 'use client'
 
 import levelImage from '/public/image/emoji-bbiyak.png'
-import Link from 'next/link'
 import { StudyCreatedCard } from './_components'
 import { studyCreatedConstants } from '@/constants'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function StudyCreatedPage() {
   const [testData, setTestData] = useState([
@@ -23,6 +23,12 @@ export default function StudyCreatedPage() {
     },
   ])
 
+  const router = useRouter()
+
+  const onClickToMyCreatedStudy = () => {
+    router.push('/mystudy/applied')
+  }
+
   return (
     <div className="h-screen flex justify-center items-center  bg-primary-50">
       <div
@@ -31,11 +37,13 @@ export default function StudyCreatedPage() {
       >
         <div className="flex flex-row justify-start items-center ml-10 font-semibold">
           <div className="bg-white px-7 py-3 rounded-t-[20px]">내가 만든 스터디</div>
-          <Link href={'/mystudy/applied'}>
-            <div className="bg-primary-100 px-7 py-3 rounded-t-[20px] border border-b-0 border-primary-gray939 border-opacity-40 text-primary-gray939 transition-all duration-300 hover:bg-primary-300 hover:text-white cursor-pointer">
-              내가 지원한 스터디
-            </div>
-          </Link>
+
+          <div
+            onClick={onClickToMyCreatedStudy}
+            className="bg-primary-100 px-7 py-3 rounded-t-[20px] border border-b-0 border-primary-gray939 border-opacity-40 text-primary-gray939 transition-all duration-300 hover:bg-primary-300 hover:text-white cursor-pointer"
+          >
+            내가 지원한 스터디
+          </div>
         </div>
         <div className=" w-[1000px] bg-white rounded-[40px] ">
           <div

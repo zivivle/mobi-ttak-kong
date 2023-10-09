@@ -1,14 +1,11 @@
 import NextAuth from 'next-auth'
-import GoogleProvider from 'next-auth/providers/google'
-
-const googleClientId = process.env.GOOGLE_CLIENT_ID || ''
-const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET || ''
+import NaverProvider from 'next-auth/providers/naver'
 
 const handler = NextAuth({
   providers: [
-    GoogleProvider({
-      clientId: googleClientId,
-      clientSecret: googleClientSecret,
+    NaverProvider({
+      clientId: process.env.NEXT_PUBLIC_NAVER_CLIENT_ID || '',
+      clientSecret: process.env.NEXT_PUBLIC_NAVER_SECRET || '',
     }),
   ],
 })

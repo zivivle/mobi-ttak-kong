@@ -1,5 +1,5 @@
 'use client'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { StudyAppliedCard } from './_components'
 import { useState } from 'react'
 
@@ -19,6 +19,11 @@ export default function StudyAppliedPage() {
       location: '성동구 전체',
     },
   ])
+  const router = useRouter()
+
+  const onClickToMyCreatedStudy = () => {
+    router.push('/mystudy/created')
+  }
 
   return (
     <div className="h-screen flex justify-center items-center  bg-primary-50">
@@ -27,17 +32,20 @@ export default function StudyAppliedPage() {
          h-auto flex flex-col px-[100px]"
       >
         <div className="flex flex-row justify-start items-center ml-10 font-semibold">
-          <Link href={'/mystudy/created'}>
-            <div className="bg-primary-100 px-7 py-3 rounded-t-[20px] border border-b-0 border-primary-gray939 border-opacity-40 text-primary-gray939 transition-all duration-300 hover:bg-primary-300 hover:text-white cursor-pointer">
-              내가 만든 스터디
-            </div>
-          </Link>
+          <div
+            onClick={onClickToMyCreatedStudy}
+            className="bg-primary-100 px-7 py-3 rounded-t-[20px] border border-b-0 border-primary-gray939 border-opacity-40 text-primary-gray939 transition-all duration-300 hover:bg-primary-300 hover:text-white cursor-pointer"
+          >
+            내가 만든 스터디
+          </div>
+
           <div className="bg-white px-7 py-3 rounded-t-[20px]">내가 지원한 스터디</div>
         </div>
         <div className=" w-[950px] bg-white flex flex-row flex-wrap justify-center items-center rounded-[40px] pb-[30px] mb-[40px] gap-x-[40px]">
           {testData.length > 0 &&
             testData.map((data) => (
               <StudyAppliedCard
+                key={data.id}
                 id={data.id}
                 label={data.label}
                 tag={data.tag}

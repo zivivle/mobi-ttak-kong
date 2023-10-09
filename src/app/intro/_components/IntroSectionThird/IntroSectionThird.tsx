@@ -1,9 +1,12 @@
+'use client'
+
 import { Button } from '@/components'
 import { siteConfig } from '@/constants/main'
 import Image from 'next/image'
 import bgImage from '/public/image/intro-bg2.webp'
+import { IntroSectionThirdProps } from '.'
 
-export const IntroSectionThird = () => {
+export const IntroSectionThird = ({ onClickToMain }: IntroSectionThirdProps) => {
   return (
     <div className="relative h-screen flex flex-col items-left justify-center p-20">
       <div className="absolute inset-0 z-[-1] bottom-0 left-0 right-0">
@@ -14,7 +17,11 @@ export const IntroSectionThird = () => {
           <p>{siteConfig.description}</p>
         </h1>
         <div>
-          <Button className="w-217 h-[55px] mt-[10px] rounded-[20px] text-white" fontSize={'xl'}>
+          <Button
+            onClick={onClickToMain}
+            className="w-217 h-[55px] mt-[10px] rounded-[20px] text-white"
+            fontSize={'xl'}
+          >
             딱콩 시작하기
           </Button>
         </div>
