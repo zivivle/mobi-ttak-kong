@@ -15,4 +15,12 @@ export const userMatchingData = [
     isInPerson: true,
     location: '서울',
   },
+  {
+    id: '65226f9a9941da75cbb9910d',
+    field: 'IT / 프로그래밍',
+    detailField: '프론트엔드 스터디',
+    level: '고급',
+    isInPerson: true,
+    location: '서울',
+  },
 ]

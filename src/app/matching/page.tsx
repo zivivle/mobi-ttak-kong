@@ -20,16 +20,16 @@ export default function StudyMatchingPage() {
   console.log(matchedStudies)
 
   return (
-    <div className={`${matchedStudies.length < 3 ? 'h-screen' : 'h-auto'} bg-primary-50 flex flex-col px-[100px]`}>
+    <div className={`${matchedStudies.length < 3 ? 'h-[92vh]' : 'h-auto'} bg-primary-50 flex flex-col px-[100px]`}>
       {!matchedStudies || matchedStudies.length === 0 ? (
         <MatchingLoading />
       ) : (
         <div>
-          <div className="flex justify-start text-[26px] font-bold pt-[100px] pb-[30px]">스터디 매칭 현황</div>
+          <div className="flex justify-start text-[26px] font-bold pt-[70px] pb-[30px]">스터디 매칭 현황</div>
           <div
             className={`${
               matchedStudies.length === 0 || matchedStudies.length === 1 ? 'h-[500px]' : 'h-auto'
-            } bg-white flex flex-row flex-wrap justify-center items-center rounded-[40px] pb-[20px] mb-[40px] gap-x-[120px]`}
+            } bg-white flex flex-row flex-wrap justify-center items-center rounded-[40px] pb-[40px] mb-[40px] gap-x-[120px]`}
           >
             {matchedStudies.length > 0 &&
               matchedStudies.map((data) => (

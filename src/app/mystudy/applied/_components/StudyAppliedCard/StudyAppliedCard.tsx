@@ -30,7 +30,13 @@ export const StudyAppliedCard = ({ id, field, detailField, ...rest }: StudyDataT
           </div>
         </div>
       </div>
-      <div className="mt-[20px] text-primary-gray200 text-[13px]">{rest.content}</div>
+      <div className="mt-[20px] text-primary-gray200 text-[13px]">
+        {rest.content.length > 40 ? (
+          <span dangerouslySetInnerHTML={{ __html: rest.content.slice(0, 40) + '...' }} />
+        ) : (
+          <span dangerouslySetInnerHTML={{ __html: rest.content }} />
+        )}
+      </div>
       <div className="flex flex-row text-[13px] mt-3 font-semibold">
         <p className="">
           현재 인원 / 최소 인원 ({rest.nowMemberCount} / {rest.minMemberCount})

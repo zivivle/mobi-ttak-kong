@@ -14,7 +14,13 @@ export default function StudyAppliedPage() {
   }
 
   return (
-    <div className="h-screen flex justify-center items-center  bg-primary-50">
+    <div
+      className={
+        studyData.length >= 3
+          ? 'h-auto flex justify-center items-center pt-[70px] bg-primary-50'
+          : 'h-[92vh] flex justify-center items-center bg-primary-50'
+      }
+    >
       <div
         className="
          h-auto flex flex-col px-[100px]"

@@ -21,14 +21,21 @@ export default function StudyMatchingDetailPage(props: StudyMatchingDetailPagePr
   })
 
   const detailInfo: StudyDataType | undefined = matchedStudies.find((data) => data.id === props.params.postId)
+  const isContentLong = detailInfo && detailInfo.content.length >= 250
 
   return (
-    <div className="h-screen flex justify-center items-center  bg-primary-50">
+    <div
+      className={
+        isContentLong
+          ? 'h-auto flex justify-center items-center  bg-primary-50'
+          : 'h-[92vh] flex justify-center items-center  bg-primary-50'
+      }
+    >
       <div
         className="
          h-auto flex flex-col px-[100px]"
       >
-        <div className=" w-[1000px] bg-white rounded-[20px] p-7  mb-[40px] ">
+        <div className=" w-[1000px] bg-white rounded-[20px] p-10  mb-[40px] ">
           <div className="flex flex-row items-center mt-4 gap-1">
             <div className=" bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white rounded-[20px] inline-block shadow-md">
               <p>{detailInfo?.field}</p>
