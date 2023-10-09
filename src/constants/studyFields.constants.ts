@@ -1,4 +1,6 @@
-export const STUDY_FIELDS = [
+import type { StudyFieldsProps } from '@/types/studyFields.types'
+
+export const STUDY_FIELDS: StudyFieldsProps[] = [
   '언어/외국어',
   'IT/프로그래밍',
   '자격증/시험',
@@ -6,4 +8,4 @@ export const STUDY_FIELDS = [
   '이직/면접',
   '독서/글쓰기',
   '기타',
-] as const
+]
