@@ -1,12 +1,11 @@
 
-<br>
+![Group 15 (1)](https://github.com/mobi-community/mobi-ttak-kong/assets/112946860/296b539f-ad17-4311-b0d3-76f48ca0276e)
+
 <div align="center">
   
   <h1>프로젝트 소개 및 개요</h1>
 
- <p align="middle">자신에게 맞는 스터디를 매칭해주는 웹 서비스를 만들어보았습니다. </p>
- 
-<img src="https://media.discordapp.net/attachments/1123460424050937948/1160947496395219014/Group_15.png?ex=6536839c&is=65240e9c&hm=7de3f6dd00fdcd5e281746ab6e9ae0204c57359d025f11379c1897f5bbdaa23b&=&width=1660&height=414"/>
+ <p align="middle">자신에게 맞는 스터디를 매칭해주는 웹 서비스입니다 :) </p>
 
 </div><br>
 
