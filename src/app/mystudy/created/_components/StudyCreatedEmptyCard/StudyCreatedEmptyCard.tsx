@@ -13,9 +13,11 @@ export const StudyCreatedEmptyCard = () => {
 
   return (
     <div className="flex flex-row">
-      <div className="w-[420px] bg-primary-50 rounded-[20px] p-[45px] mt-[30px] gap-8 flex flex-row justify-center items-center">
+      <div className="w-[420px] bg-primary-50 rounded-[20px] shadow-md p-[45px] mt-[30px] gap-8 flex flex-row justify-center items-center">
         <Image src={beanIcon} alt="콩 아이콘" width={140} />
-        <Button onClick={onClickToCreateStudy}>스터디 만들러 가기</Button>
+        <Button className="shadow-md" onClick={onClickToCreateStudy}>
+          스터디 만들러 가기
+        </Button>
       </div>
     </div>
   )

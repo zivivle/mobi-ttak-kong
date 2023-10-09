@@ -25,7 +25,7 @@ export const StudyCreatedCard = ({ field, detailField, ...rest }: StudyDataType)
 
   return (
     <div className="flex flex-row">
-      <div className="w-[420px] bg-primary-50 rounded-[20px] p-[25px] mt-[30px] flex flex-row">
+      <div className="w-[420px] bg-primary-50 rounded-[20px] p-[25px] mt-[30px] flex flex-row shadow-md">
         <div>
           <div className=" flex flex-row items-center h-[30px] ">
             <div>
@@ -47,11 +47,11 @@ export const StudyCreatedCard = ({ field, detailField, ...rest }: StudyDataType)
             {/* 스터디 수정페이지 이동 여기 연결 */}
             <span className="material-icons-outlined cursor-pointer">edit_note</span>
           </div>
-          <div className="bg-white rounded-[50%] ml-7 px-2 py-3 flex flex-col justify-center items-center mt-[20px]">
+          <div className="bg-white shadow-md rounded-[50%] ml-7 px-2 py-3 flex flex-col justify-center items-center mt-[20px]">
             <Image src={levelIcon} alt="레벨 아이콘" width={50} height={50} />
             <div>{rest.level}</div>
           </div>
-          <div className="ml-7 flex justify-center bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white rounded-[20px] mt-4">
+          <div className="ml-7 shadow-md flex justify-center bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white rounded-[20px] mt-4">
             <p>{field}</p>
           </div>
         </div>

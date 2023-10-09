@@ -22,7 +22,7 @@ export const SelectCard = ({ mypageInfo }: { mypageInfo: SelectCardProps }) => {
   return (
     <div
       onClick={isSelectCardLeft ? onClickToMatchingPage : onClickToStudyCreatePage}
-      className="bg-primary w-[460px] pt-[60px] pb-[20px] flex flex-col justify-center items-center w-[282px] rounded-[20px] hover:bg-primary-200 cursor-pointer transition-all duration-500"
+      className="bg-primary w-[460px] pt-[60px] pb-[20px] flex flex-col justify-center items-center w-[282px] rounded-[20px] shadow-md hover:bg-primary-200 cursor-pointer transition-all duration-500"
     >
       <Image src={mypageInfo.image} alt="test" width={200} height={200} className="mb-[1px]" />
       <div className="mb-2 flex flex-col justify-center items-center text-[18px] ">
@@ -31,7 +31,7 @@ export const SelectCard = ({ mypageInfo }: { mypageInfo: SelectCardProps }) => {
       </div>
       <Button
         variant={'secondary'}
-        className={`border-[1.5px] border-solid border-primary-black text-[12px] text-primary-black my-[15px] w-[235px] h-[44px] ${
+        className={`border-[1.5px] border-solid border-primary-gray939 shadow-md text-[12px] text-primary-black my-[15px] w-[235px] h-[44px] ${
           isSelectCardLeft ? '' : 'invisible'
         }`}
       >

@@ -15,9 +15,9 @@ export const StudyAppliedCard = ({ id, field, detailField, ...rest }: StudyDataT
   }
 
   return (
-    <div className="w-[400px] bg-primary-50 rounded-[20px] p-[43px] mt-[30px]">
+    <div className="w-[400px] bg-primary-50 rounded-[20px] p-[43px] mt-[30px] shadow-md">
       <div className="mb-2 font-bold text-[16px] text-primary-gray200">{field}</div>
-      <div className="bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white inline-block rounded-[20px]">
+      <div className="bg-primary-300 shadow-md px-3 py-1 text-[12px] font-semibold text-white inline-block rounded-[20px]">
         {detailField}
       </div>
       <div className="mt-[18px] flex flex-row items-center h-[35px] ">
@@ -45,7 +45,7 @@ export const StudyAppliedCard = ({ id, field, detailField, ...rest }: StudyDataT
           onClick={onClickToStudyDetailPage}
           variant={'secondary'}
           fontSize={'sm'}
-          className="w-[120px] h-[30px] rounded-[20px]"
+          className="w-[120px] h-[30px] rounded-[20px] shadow-md"
         >
           자세히 보러가기
         </Button>

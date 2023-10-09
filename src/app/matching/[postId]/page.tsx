@@ -29,11 +29,11 @@ export default function StudyMatchingDetailPage(props: StudyMatchingDetailPagePr
          h-auto flex flex-col px-[100px]"
       >
         <div className=" w-[1000px] bg-white rounded-[20px] p-7  mb-[40px] ">
-          <div className="flex flex-row items-center mt-4">
-            <div className=" bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white rounded-[20px] inline-block">
+          <div className="flex flex-row items-center mt-4 gap-1">
+            <div className=" bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white rounded-[20px] inline-block shadow-md">
               <p>{detailInfo?.field}</p>
             </div>
-            <div className=" bg-primary-50 px-3 py-1 text-[12px] inline-flex font-semibold text-primary-black rounded-[20px] gap-[1px]">
+            <div className=" bg-primary-50 px-3 py-1 text-[12px] inline-flex font-semibold text-primary-black rounded-[20px] gap-[1px] shadow-md">
               <Image src={levelImage} alt="등급 이미지" width={20} height={10} />
               <p>{detailInfo?.level}</p>
             </div>
@@ -50,7 +50,7 @@ export default function StudyMatchingDetailPage(props: StudyMatchingDetailPagePr
           <div className=" text-black text-[12px] font-medium">장소 : {detailInfo?.location}</div>
           {detailInfo ? (
             <div
-              className="bg-primary-50 px-7 py-10 mt-5 text-black text-[14px] font-normal rounded-[20px]"
+              className="bg-primary-50 px-7 py-10 mt-5 text-black text-[14px] font-normal rounded-[20px] shadow-md"
               dangerouslySetInnerHTML={{ __html: detailInfo.content }}
             />
           ) : null}

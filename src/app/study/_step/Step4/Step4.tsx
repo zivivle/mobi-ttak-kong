@@ -29,10 +29,11 @@ export const Step4Page = ({ nextStep }: CreateStudyPageProps) => {
       <InnerSection subtitle="스터디 장소 지역을 검색해주세요.">
         <div>
           <input
+            className="border-[1px] px-4 py-2 rounded-[20px] w-[193px] cursor-pointer shadow-md"
             value={address}
             readOnly
             onClick={() => setAddressModalOpen(true)}
-            placeholder={'이곳을 클릭해주세요'}
+            placeholder={' 👆🏻 이곳을 클릭해주세요'}
           />
           {addressModalOpen && (
             <SearchLodationModal setAddress={setAddress} setAddressModalOpen={setAddressModalOpen} />
