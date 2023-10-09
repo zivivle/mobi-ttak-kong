@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 export const MatchingCard = ({ id, label, title, content }: MatchingCardProps) => {
   const router = useRouter()
   const onClickToMatchingPage = () => {
-    router.push(`/mystudy/applied/${id}`)
+    router.push(`/matching/${id}`)
   }
 
   return (
@@ -17,10 +17,13 @@ export const MatchingCard = ({ id, label, title, content }: MatchingCardProps) =
         <Image src={defaultProfile} alt="임시 이미지" width={35} height={40} />
         <div className="ml-[15px] font-bold">{title}</div>
       </div>
-      <div className="mt-[20px] text-primary-gray200 text-[13px]">{content}</div>
-      <div className="flex justify-between mt-[20px]">
-        <Button className="w-[140px] h-[35px] rounded-[20px]">지원하기</Button>
-        <Button onClick={onClickToMatchingPage} variant={'secondary'} className="w-[140px] h-[35px] rounded-[20px]">
+      <div className="mt-[20px] text-primary-gray200 text-[13px]" dangerouslySetInnerHTML={{ __html: content }} />
+      <div className="flex justify-center mt-[20px]">
+        <Button
+          onClick={onClickToMatchingPage}
+          variant={'secondary'}
+          className="w-[140px] h-[35px] rounded-[20px] mt-10"
+        >
           자세히 보러가기
         </Button>
       </div>

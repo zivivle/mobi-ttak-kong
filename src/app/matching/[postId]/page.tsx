@@ -1,0 +1,49 @@
+'use client'
+
+import levelImage from '/public/image/level-image.png'
+import Image from 'next/image'
+import { userMatchingStudyData } from '@/mocks'
+import { StudyMatchingDetailPageProps } from '.'
+import { StudyDataType } from '@/types'
+
+export default function StudyMatchingDetailPage(props: StudyMatchingDetailPageProps) {
+  const detailInfo: StudyDataType | undefined = userMatchingStudyData.find((data) => data.id === props.params.postId)
+
+  return (
+    <div className="h-auto flex justify-center items-center  bg-primary-50">
+      <div
+        className="
+         h-auto flex flex-col px-[100px]"
+      >
+        <div className=" w-[1000px] bg-white rounded-[20px] p-7 mt-[80px] mb-[40px] ">
+          <div className="flex flex-row items-center mt-4">
+            <div className=" bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white rounded-[20px] inline-block">
+              <p>{detailInfo?.field}</p>
+            </div>
+            <div className=" bg-primary-50 px-3 py-1 text-[12px] inline-flex font-semibold text-primary-black rounded-[20px] gap-[1px]">
+              <Image src={levelImage} alt="등급 이미지" width={20} height={10} />
+              <p>{detailInfo?.level}</p>
+            </div>
+          </div>
+
+          <div className=" mt-5 text-primary-gray939 text-[12px] font-medium">{detailInfo?.detailField}</div>
+          <div className=" text-black text-[24px] font-bold">{detailInfo?.title}</div>
+          <div className=" mt-2 text-black text-[12px] font-bold">
+            현재 인원 / 최소 인원 ({detailInfo?.nowMemberCount} / {detailInfo?.minMemberCount})
+          </div>
+          <div className=" mt-5 text-black text-[12px] font-bold">
+            {detailInfo?.isInPerson ? '대면 스터디' : '비대면 스터디'}
+          </div>
+          <div className=" text-black text-[12px] font-medium">장소 : {detailInfo?.location}</div>
+          {detailInfo ? (
+            <div
+              className="bg-primary-50 px-7 py-10 mt-5 text-black text-[14px] font-normal rounded-[20px]"
+              dangerouslySetInnerHTML={{ __html: detailInfo.content }}
+            />
+          ) : null}
+          <div className="flex justify-center mt-5 "></div>
+        </div>
+      </div>
+    </div>
+  )
+}
