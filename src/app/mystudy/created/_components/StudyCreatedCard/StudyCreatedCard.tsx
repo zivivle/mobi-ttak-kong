@@ -3,7 +3,9 @@ import editIcon from '/public/image/level-image.png'
 import levelImage from '../../../../../../public/image/level-image.png'
 import { StudyCreatedCardProps } from '..'
 
-export const StudyCreatedCard = () => {
+// studyDataId는 추후 수정페이지에 데아터 불러올때 사용예정
+export const StudyCreatedCard = ({ studyData, studyDataId }: StudyCreatedCardProps) => {
+  if (!studyData) return
   return (
     <div className="flex flex-row">
       <div className="w-[420px] bg-primary-50 rounded-[20px] p-[25px] mt-[30px] flex flex-row">
@@ -11,14 +13,16 @@ export const StudyCreatedCard = () => {
           <div className=" flex flex-row items-center h-[30px] ">
             <div>
               <div className="text-[14px] flex flex-row items-center">
-                <p className="font-bold">title</p>
-                <p className="text-[12px] text-primary-gray200 ml-2 font-semibold">label</p>
+                <p className="font-bold">{studyData.title}</p>
+                <p className="text-[12px] text-primary-gray200 ml-2 font-semibold">{studyData.detailField}</p>
               </div>
             </div>
           </div>
-          <div className="mt-2 text-primary-gray200 text-[13px] w-[240px]">rest.content</div>
+          <div className="mt-2 text-primary-gray200 text-[13px] w-[240px]">{studyData.content}</div>
           <div className=" flex flex-row justify-start text-[13px] mt-12 font-semibold">
-            <p className="">현재 인원 / 최소 인원 (rest.nowMemberCount / rest.minMemberCount)</p>
+            <p className="">
+              현재 인원 / 최소 인원 ({studyData.nowMemberCount} / {studyData.minMemberCount})
+            </p>
           </div>
         </div>
         <div className="w-[340px]">
@@ -26,11 +30,11 @@ export const StudyCreatedCard = () => {
             <Image src={editIcon} alt="수정 아이콘" width={20} height={10} />
           </div>
           <div className="bg-white rounded-[50%] ml-7 px-2 py-3 flex flex-col justify-center items-center mt-[20px]">
-            <Image src={levelImage} alt="레벨 아이콘" width={50} height={50} />
-            <div>rest.level</div>
+            <Image src={levelImage} alt="임시 이미지" width={50} height={50} />
+            <div>{studyData.level}</div>
           </div>
           <div className="ml-7 flex justify-center bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white rounded-[20px] mt-4">
-            <p>rest.tag</p>
+            <p>{studyData.field}</p>
           </div>
         </div>
       </div>
