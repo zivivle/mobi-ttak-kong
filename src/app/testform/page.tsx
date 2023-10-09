@@ -254,6 +254,7 @@ const TestPage = () => {
         />
 
         <Button type="submit">전송</Button>
+        <Button type="submit">수정</Button>
       </form>
     </div>
   )

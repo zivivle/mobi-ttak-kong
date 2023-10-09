@@ -2,10 +2,10 @@
 import { useEffect, useState } from 'react'
 import { NoMatchingCard } from './_components/NoMatchingCard'
 import { MatchingCard, MatchingLoading } from './_components'
-import { StudyDataType, UserDataType } from '@/types'
+import { StudyDataType, UserStudyDataType } from '@/types'
 
 export default function StudyMatchingPage() {
-  const [userStudyData, setUserStudyData] = useState<UserDataType[]>([])
+  const [userStudyData, setUserStudyData] = useState<UserStudyDataType[]>([])
   const studyDatas: StudyDataType[] = userStudyData[0]?.isMatchingStudy
 
   useEffect(() => {
