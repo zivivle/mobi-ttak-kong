@@ -2,12 +2,25 @@
 
 import levelImage from '/public/image/level-image.png'
 import Image from 'next/image'
-import { userMatchingStudyData } from '@/mocks'
+
 import { StudyMatchingDetailPageProps } from '.'
 import { StudyDataType } from '@/types'
+import { StudyData, userMatchingData } from '@/mocks'
 
 export default function StudyMatchingDetailPage(props: StudyMatchingDetailPageProps) {
-  const detailInfo: StudyDataType | undefined = userMatchingStudyData.find((data) => data.id === props.params.postId)
+  const matchedStudies = StudyData.filter((study) => {
+    return userMatchingData.some((userMatch) => {
+      return (
+        study.field === userMatch.field &&
+        study.detailField === userMatch.detailField &&
+        study.level === userMatch.level &&
+        study.isInPerson === userMatch.isInPerson &&
+        study.location === userMatch.location
+      )
+    })
+  })
+
+  const detailInfo: StudyDataType | undefined = matchedStudies.find((data) => data.id === props.params.postId)
 
   return (
     <div className="h-auto flex justify-center items-center  bg-primary-50">

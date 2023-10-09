@@ -13,6 +13,6 @@ export const userMatchingData = [
     detailField: '프론트엔드 스터디',
     level: '초급',
     isInPerson: true,
-    location: '성동구',
+    location: '서울',
   },
 ]

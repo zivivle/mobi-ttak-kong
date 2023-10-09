@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import levelIcon from '/public/image/level-image.png'
 import { StudyDataType } from '@/types'
-import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 export const StudyCreatedCard = ({ field, detailField, ...rest }: StudyDataType) => {
