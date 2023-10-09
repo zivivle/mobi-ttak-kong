@@ -1,11 +1,13 @@
 
 ![Group 15 (1)](https://github.com/mobi-community/mobi-ttak-kong/assets/112946860/296b539f-ad17-4311-b0d3-76f48ca0276e)
 
-<div align="center">
+<div>
   
-  <h1>프로젝트 소개 및 개요</h1>
+<h1>프로젝트 소개 및 개요</h1>
 
- <p align="middle">자신에게 맞는 스터디를 매칭해주는 웹 서비스입니다 :) </p>
+> 📚 자신에게 딱 맞는 스터디를 매칭받다, 딱콩
+
+넘쳐나는 스터디 모집 글 목록 말고, 나에게 딱 맞는 스터디 매칭을 받아보세요!
 
 </div><br>
 
@@ -28,12 +30,12 @@
 <table>
   <tr>
     <td>
-      <a href="https://github.com/">
+      <a href="https://github.com/doeunnkimm">
         <img src="https://avatars.githubusercontent.com/u/112946860?v=4" width="120px" height="120px"/>
       </a>  
     </td>
      <td>
-      <a href="https://github.com/">
+      <a href="https://github.com/zivivle">
         <img src="https://avatars.githubusercontent.com/u/123868471?v=4" width="120px" height="120px"/>
       </a>  
     </td>
@@ -50,10 +52,10 @@
   </tr>
   <tr>
     <th>
-       프론트 엔드
+       프론트엔드
     </th>
     <th>
-       프론트 엔드
+       프론트엔드
     </th>
     
    
@@ -91,20 +93,14 @@
 
 <h2>✔️ 주요 기능 구현 내용</h2>
 
-<summary> - 네이버로 로그인 기능</summary>
-<br>
+- 네이버로 로그인 기능
 
-<summary> - 스터디 매칭 정보 등록 </summary>
-<br>
+- 스터디 매칭 정보 등록
 
-<summary> - 스터디 만들기 등록</summary>
-<br>
+- 스터디 만들기 등록
 
-<summary> - 매칭중인 스터디 조회 </summary>
-<br>
+- 매칭중인 스터디 조회
 
-<summary> - 매칭된 스터디 조회</summary>
-<br>
+- 매칭된 스터디 조회
 
-<summary> - 내가 만든 스터디 조회</summary>
-<br>
+- 내가 만든 스터디 조회
