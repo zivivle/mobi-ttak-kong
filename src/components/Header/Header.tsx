@@ -9,6 +9,7 @@ import { IntroHeader } from '../IntroHeader/IntroHeader'
 import { useState } from 'react'
 import LoginModalPage from '../../app/_components/LoginModal/LoginModal'
 import { signOut, useSession } from 'next-auth/react'
+import { StudyData, userMatchingData } from '@/mocks'
 
 export const Header = () => {
   const router = useRouter()
@@ -18,7 +19,18 @@ export const Header = () => {
     router.push(`${href}`)
   }
 
-  // isModalOpen은 추후 전역상태 관리 변경 예정
+  const matchedStudies = StudyData.filter((study) => {
+    return userMatchingData.some((userMatch) => {
+      return (
+        study.field === userMatch.field &&
+        study.detailField === userMatch.detailField &&
+        study.level === userMatch.level &&
+        study.isInPerson === userMatch.isInPerson &&
+        study.location === userMatch.location
+      )
+    })
+  })
+
   const [isModalOpen, setIsModalOpen] = useState(false)
   const { data: session } = useSession()
 
@@ -29,7 +41,7 @@ export const Header = () => {
       ) : (
         <div>
           {isModalOpen ? <LoginModalPage setIsModalOpen={setIsModalOpen} /> : null}
-          <div className="fixed top-0 w-full h-[auto] flex justify-between pl-10 pr-14 py-2 bg-white">
+          <div className="fixed top-0 w-full h-[auto] flex justify-between pl-10 pr-14 py-2 bg-white relative">
             <div className="flex flex-row gap-1 py-[5px]">
               <div
                 onClick={() => {
@@ -68,17 +80,26 @@ export const Header = () => {
                   </div>
                 </div>
               ) : (
-                <div className="flex flex-row justify-center items-center gap-1">
+                <div className="flex flex-row justify-center items-center gap-1 ">
                   <img
                     className=" w-[30px] h-[30px] rounded-[50%]"
                     src={session.user?.image || null || undefined}
                     alt="유저 이미지"
                   />
                   <p className="text-sky-600">{session.user?.name}님 반갑습니다!</p>
-                  <div className="flex flex-col justify-end items-center ml-4 cursor-pointer">
+                  <div
+                    onClick={() => {
+                      onClickToHeaderLink('/matching')
+                    }}
+                    className=" relative flex flex-col justify-end items-center ml-4 cursor-pointer"
+                  >
                     <span className="material-icons-outlined ">notifications</span>
                     <p className="text-[14px] font-semibold">알람</p>
+                    <div className="flex absolute left-5 top-0 justify-center items-center text-white font-bold bg-primary rounded-[50%] text-[12px] w-5 h-5">
+                      {matchedStudies.length}
+                    </div>
                   </div>
+
                   <div
                     onClick={() => signOut()}
                     className="ml-2 flex flex-col justify-center items-center cursor-pointer"
