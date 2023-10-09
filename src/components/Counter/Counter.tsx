@@ -1,14 +1,14 @@
 import type { CounterProps } from './Counter.types'
 
-export const Counter = ({ bgColor = 'primary-100', count = 0, onChange, minCount, maxCount }: CounterProps) => {
+export const Counter = ({ bgColor = 'primary-100', count, onChange, minCount, maxCount }: CounterProps) => {
   const setBgColor = 'bg-' + bgColor
 
   const onClickUpAndDown = (type: 'up' | 'down') => {
     if (type === 'up') {
-      onChange((prev) => prev + 1)
+      onChange(count + 1)
     }
     if (type === 'down') {
-      onChange((prev) => prev - 1)
+      onChange(count - 1)
     }
   }
 
