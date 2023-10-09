@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react'
 import { NoMatchingCard } from './_components/NoMatchingCard'
 import { MatchingCard, MatchingLoading } from './_components'
 import { StudyData, userMatchingData } from '@/mocks'
@@ -17,7 +16,9 @@ export default function StudyMatchingPage() {
     })
   })
 
-  console.log(matchedStudies)
+  // if (isLoading) {
+  //   return <div>Loading...</div>
+  // }
 
   return (
     <div className={`${matchedStudies.length < 3 ? 'h-[92vh]' : 'h-auto'} bg-primary-50 flex flex-col px-[100px]`}>

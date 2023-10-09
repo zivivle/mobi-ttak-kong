@@ -1,10 +1,9 @@
 import { Header } from '@/components/Header/Header'
 import '@/styles/global.css'
-
 import type { Metadata } from 'next'
-
 import localFont from 'next/font/local'
 import AuthSession from './api/auth/[...nextauth]/AuthSession'
+import Providers from '@/utils/provider'
 
 const mainFont = localFont({
   src: './fonts/PretendardVariable.woff2',
@@ -24,8 +23,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={mainFont.className}>
         <AuthSession>
-          <Header />
-          {children}
+          <Providers>
+            <Header />
+            {children}
+          </Providers>
         </AuthSession>
       </body>
     </html>
