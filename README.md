@@ -12,6 +12,7 @@
 <br>
 
 ![0](https://github.com/mobi-community/mobi-ttak-kong/assets/123868471/2c6ab9a2-8361-4d36-9fda-d298661de545)
+![7](https://github.com/mobi-community/mobi-ttak-kong/assets/123868471/ac834edb-3826-4182-9aa4-4ca802bb0dfe)
 ![1](https://github.com/mobi-community/mobi-ttak-kong/assets/123868471/1ef63f7d-7246-41c1-88df-d4195de96cdd)
 ![2](https://github.com/mobi-community/mobi-ttak-kong/assets/123868471/a48fa965-68d0-4b10-9277-dd1dd97266e1)
 
