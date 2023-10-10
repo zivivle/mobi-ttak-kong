@@ -17,8 +17,6 @@ export default function StudyMatchingPage() {
     })
   })
 
-  console.log(matchedStudies)
-
   return (
     <div className={`${matchedStudies.length < 3 ? 'h-[92vh]' : 'h-auto'} bg-primary-50 flex flex-col px-[100px]`}>
       {!matchedStudies || matchedStudies.length === 0 ? (
