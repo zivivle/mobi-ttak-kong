@@ -15,8 +15,15 @@ export const Header = () => {
   const router = useRouter()
   const pathName = usePathname()
   const isIntroPage = pathName === '/intro'
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const { data: session } = useSession()
+
   const onClickToHeaderLink = (href: string) => {
-    router.push(`${href}`)
+    if (session || href === '/') {
+      router.push(`${href}`)
+    } else if (!session) {
+      setIsModalOpen(true)
+    }
   }
 
   const matchedStudies = StudyData.filter((study) => {
@@ -30,9 +37,6 @@ export const Header = () => {
       )
     })
   })
-
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const { data: session } = useSession()
 
   return (
     <div>
