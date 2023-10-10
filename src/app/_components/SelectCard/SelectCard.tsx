@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
 
 import { useAtom } from 'jotai'
-import { isOpenLoginModal } from '@/app/_states/client'
+import { isOpenLoginModal } from '@/app/_states'
 
 export const SelectCard = ({ mypageInfo }: { mypageInfo: SelectCardProps }) => {
   const isSelectCardLeft = mypageInfo.id === 1

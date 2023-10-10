@@ -10,7 +10,7 @@ import LoginModalPage from '../../app/_components/LoginModal/LoginModal'
 import { signOut, useSession } from 'next-auth/react'
 import { StudyData, userMatchingData } from '@/mocks'
 import { useAtom } from 'jotai'
-import { isOpenLoginModal } from '@/app/_states/client'
+import { isOpenLoginModal } from '@/app/_states'
 
 export const Header = () => {
   const router = useRouter()
