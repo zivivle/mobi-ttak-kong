@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react'
 import { NoMatchingCard } from './_components/NoMatchingCard'
 import { MatchingCard, MatchingLoading } from './_components'
 import { StudyData, userMatchingData } from '@/mocks'

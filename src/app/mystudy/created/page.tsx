@@ -3,22 +3,23 @@
 import { StudyCreatedCard } from './_components'
 import { studyCreatedConstants } from '@/constants'
 import { useRouter } from 'next/navigation'
-import { userCreatedStudyData } from '@/mocks'
 import { StudyCreatedEmptyCard } from './_components/StudyCreatedEmptyCard'
+import { useCreatedStudies } from '@/hooks/useCreatedStudies'
 
 export default function StudyCreatedPage() {
-  const studyData = userCreatedStudyData
-
   const router = useRouter()
+  const { data, isLoading, isError } = useCreatedStudies()
 
   const onClickToMyCreatedStudy = () => {
     router.push('/mystudy/applied')
   }
 
+  if (isLoading) return <div>Loading...</div>
+  if (isError) return <div>Error...</div>
   return (
     <div
       className={
-        studyData.length >= 3
+        data.length >= 3
           ? 'h-auto flex justify-center items-center pt-[70px] bg-primary-50'
           : 'h-[92vh] flex justify-center items-center bg-primary-50'
       }
@@ -43,23 +44,10 @@ export default function StudyCreatedPage() {
             dangerouslySetInnerHTML={{ __html: studyCreatedConstants.description }}
           />
           <div className="flex flex-row flex-wrap justify-center items-center pb-[30px] y-10 mb-[40px] gap-x-[40px]">
-            {studyData.map((data) => (
-              <StudyCreatedCard
-                key={data.id}
-                id={data.id}
-                field={data.field}
-                detailField={data.detailField}
-                title={data.title}
-                content={data.content}
-                minMemberCount={data.minMemberCount}
-                nowMemberCount={data.nowMemberCount}
-                level={data.level}
-                isInPerson={data.isInPerson}
-                location={data.location}
-                isClosed={data.isClosed}
-              />
+            {data.map((data) => (
+              <StudyCreatedCard key={data.id} studyData={data} />
             ))}
-            {studyData.length === 0 || (studyData.length % 2 === 1 && <StudyCreatedEmptyCard />)}
+            {data.length === 0 || (data.length % 2 === 1 && <StudyCreatedEmptyCard />)}
           </div>
         </div>
       </div>

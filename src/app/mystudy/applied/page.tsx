@@ -1,22 +1,24 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { StudyAppliedCard } from './_components'
-import { userAppliedStudyData } from '@/mocks'
+
 import { StudyAppliedEmptyDataCard } from './_components/StudyAppliedEmptyDataCard/StudyAppliedEmptyDataCard'
+import { useAppliedStudies } from '@/hooks/useAppliedStudies'
 
 export default function StudyAppliedPage() {
-  const studyData = userAppliedStudyData
-
   const router = useRouter()
+  const { data, isLoading, isError } = useAppliedStudies()
 
   const onClickToMyCreatedStudy = () => {
     router.push('/mystudy/created')
   }
 
+  if (isLoading) return <div>Loading...</div>
+  if (isError) return <div>Error...</div>
   return (
     <div
       className={
-        studyData.length >= 3
+        data.length >= 3
           ? 'h-auto flex justify-center items-center pt-[70px] bg-primary-50'
           : 'h-[92vh] flex justify-center items-center bg-primary-50'
       }
@@ -36,24 +38,8 @@ export default function StudyAppliedPage() {
           <div className="bg-white px-7 py-3 rounded-t-[20px]">내가 지원한 스터디</div>
         </div>
         <div className=" w-[950px] bg-white flex flex-row flex-wrap justify-center items-center rounded-[40px] pb-[30px] mb-[40px] gap-x-[40px]">
-          {studyData.length > 0 &&
-            studyData.map((data) => (
-              <StudyAppliedCard
-                key={data.id}
-                id={data.id}
-                field={data.field}
-                detailField={data.detailField}
-                title={data.title}
-                content={data.content}
-                minMemberCount={data.minMemberCount}
-                nowMemberCount={data.nowMemberCount}
-                level={data.level}
-                isInPerson={data.isInPerson}
-                location={data.location}
-                isClosed={data.isClosed}
-              />
-            ))}
-          {studyData.length === 0 || (studyData.length % 2 === 1 && <StudyAppliedEmptyDataCard />)}
+          {data.length > 0 && data.map((data) => <StudyAppliedCard key={data.id} studyData={data} />)}
+          {data.length === 0 || (data.length % 2 === 1 && <StudyAppliedEmptyDataCard />)}
         </div>
       </div>
     </div>

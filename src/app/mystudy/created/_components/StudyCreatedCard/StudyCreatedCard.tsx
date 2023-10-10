@@ -5,9 +5,9 @@ import levelIcon from '/public/image/level-image.png'
 import { StudyDataType } from '@/types'
 import { useState } from 'react'
 
-export const StudyCreatedCard = ({ field, detailField, ...rest }: StudyDataType) => {
+export const StudyCreatedCard = ({ studyData }: { studyData: StudyDataType }) => {
   // const router = useRouter()
-  const [isClosed, setIsClosed] = useState(rest.isClosed)
+  const [isClosed, setIsClosed] = useState(studyData.isClosed)
 
   const onClickIsClosedToggle = () => {
     if (isClosed === true) {
@@ -30,15 +30,15 @@ export const StudyCreatedCard = ({ field, detailField, ...rest }: StudyDataType)
           <div className=" flex flex-row items-center h-[30px] ">
             <div>
               <div className="text-[14px] flex flex-row items-center">
-                <p className="font-bold">{rest.title}</p>
-                <p className="text-[12px] text-primary-gray200 ml-2 font-semibold">{detailField}</p>
+                <p className="font-bold">{studyData.title}</p>
+                <p className="text-[12px] text-primary-gray200 ml-2 font-semibold">{studyData.detailField}</p>
               </div>
             </div>
           </div>
-          <div className="mt-2 text-primary-gray200 text-[13px] w-[240px]">{rest.content}</div>
+          <div className="mt-2 text-primary-gray200 text-[13px] w-[240px]">{studyData.content}</div>
           <div className=" flex flex-row justify-start text-[13px] mt-12 font-semibold">
             <p className="">
-              현재 인원 / 최소 인원 ({rest.nowMemberCount} / {rest.minMemberCount})
+              현재 인원 / 최소 인원 ({studyData.nowMemberCount} / {studyData.minMemberCount})
             </p>
           </div>
         </div>
@@ -49,10 +49,10 @@ export const StudyCreatedCard = ({ field, detailField, ...rest }: StudyDataType)
           </div>
           <div className="bg-white shadow-md rounded-[50%] ml-7 px-2 py-3 flex flex-col justify-center items-center mt-[20px]">
             <Image src={levelIcon} alt="레벨 아이콘" width={50} height={50} />
-            <div>{rest.level}</div>
+            <div>{studyData.level}</div>
           </div>
           <div className="ml-7 shadow-md flex justify-center bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white rounded-[20px] mt-4">
-            <p>{field}</p>
+            <p>{studyData.field}</p>
           </div>
         </div>
       </div>

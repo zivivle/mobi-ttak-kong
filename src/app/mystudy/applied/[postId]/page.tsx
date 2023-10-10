@@ -4,12 +4,16 @@ import { Button } from '@/components'
 import levelImage from '../../../../../public/image/level-image.png'
 import Image from 'next/image'
 import { StudyAppliedDetailType } from '.'
-import { userAppliedStudyData } from '@/mocks'
 import { StudyDataType } from '@/types'
+import { useAppliedStudies } from '@/hooks/useAppliedStudies'
 
 export default function StudyAppliedDetailPage(props: StudyAppliedDetailType) {
-  const studyData: StudyDataType | undefined = userAppliedStudyData.find((data) => data.id === props.params.postId)
+  const { data, isLoading, isError } = useAppliedStudies()
+  const studyData: StudyDataType | undefined = data?.find((data) => data.id === props.params.postId)
   const isContentLong = studyData && studyData.content.length >= 250
+
+  if (isLoading) return <div>Loading...</div>
+  if (isError) return <div>Error...</div>
 
   return (
     <div
