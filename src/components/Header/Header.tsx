@@ -10,19 +10,21 @@ import { useState } from 'react'
 import LoginModalPage from '../../app/_components/LoginModal/LoginModal'
 import { signOut, useSession } from 'next-auth/react'
 import { StudyData, userMatchingData } from '@/mocks'
+import { useAtom } from 'jotai'
+import { isOpenLoginModal } from '@/store'
 
 export const Header = () => {
   const router = useRouter()
   const pathName = usePathname()
   const isIntroPage = pathName === '/intro'
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isLoginModal, setIsLoginModal] = useAtom(isOpenLoginModal)
   const { data: session } = useSession()
 
   const onClickToHeaderLink = (href: string) => {
     if (session || href === '/') {
       router.push(`${href}`)
     } else if (!session) {
-      setIsModalOpen(true)
+      setIsLoginModal(true)
     }
   }
 
@@ -44,7 +46,7 @@ export const Header = () => {
         <IntroHeader />
       ) : (
         <div>
-          {isModalOpen ? <LoginModalPage setIsModalOpen={setIsModalOpen} /> : null}
+          {isLoginModal ? <LoginModalPage setIsModalOpen={setIsLoginModal} /> : null}
           <div className="fixed top-0 w-full h-[auto] flex justify-between pl-10 pr-14 py-2 bg-white relative">
             <div className="flex flex-row gap-1 py-[5px]">
               <div
@@ -75,7 +77,7 @@ export const Header = () => {
                 <div>
                   <div
                     onClick={() => {
-                      setIsModalOpen(true)
+                      setIsLoginModal(true)
                     }}
                     className="flex flex-col justify-center items-center cursor-pointer"
                   >

@@ -3,24 +3,27 @@ import Image from 'next/image'
 import { SelectCardProps } from '.'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
+import { isOpenLoginModal } from '@/store'
+import { useAtom } from 'jotai'
 
 export const SelectCard = ({ mypageInfo }: { mypageInfo: SelectCardProps }) => {
   const isSelectCardLeft = mypageInfo.id === 1
   const router = useRouter()
   const { data: session } = useSession()
+  const [isLoginModal, setIsLoginModal] = useAtom(isOpenLoginModal)
 
   const onClickToMatchingPage = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
     if (!session) {
-      return alert('로그인을 해주세요')
+      return setIsLoginModal(true)
     }
     router.push('/matching')
   }
 
   const onClickToStudyCreatePage = () => {
     if (!session) {
-      return alert('로그인을 해주세요')
+      return setIsLoginModal(true)
     }
     router.push('/study/create')
   }
@@ -29,7 +32,7 @@ export const SelectCard = ({ mypageInfo }: { mypageInfo: SelectCardProps }) => {
     e.preventDefault()
     e.stopPropagation()
     if (!session) {
-      return alert('로그인을 해주세요')
+      return setIsLoginModal(true)
     }
     router.push('/study/create')
   }
