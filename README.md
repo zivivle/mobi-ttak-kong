@@ -9,6 +9,16 @@
 
 넘쳐나는 스터디 모집 글 목록 말고, 나에게 딱 맞는 스터디 매칭을 받아보세요!
 
+<br>
+
+![0](https://github.com/mobi-community/mobi-ttak-kong/assets/123868471/2c6ab9a2-8361-4d36-9fda-d298661de545)
+![1](https://github.com/mobi-community/mobi-ttak-kong/assets/123868471/1ef63f7d-7246-41c1-88df-d4195de96cdd)
+![2](https://github.com/mobi-community/mobi-ttak-kong/assets/123868471/a48fa965-68d0-4b10-9277-dd1dd97266e1)
+
+
+
+
+
 </div><br>
 
 <h2>노션 링크</h2>
