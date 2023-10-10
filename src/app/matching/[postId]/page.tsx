@@ -5,11 +5,15 @@ import Image from 'next/image'
 
 import { StudyMatchingDetailPageProps } from '.'
 import { StudyDataType } from '@/types'
-import { StudyData, userMatchingData } from '@/mocks'
+import { useStudies } from '@/hooks/useStudies'
+import { useUserMatchingDatas } from '@/hooks/useUserMatchingDatas'
 
 export default function StudyMatchingDetailPage(props: StudyMatchingDetailPageProps) {
-  const matchedStudies = StudyData.filter((study) => {
-    return userMatchingData.some((userMatch) => {
+  const { data: studiesData, isLoading: isStudiesLoading, isError: isStudiesError } = useStudies()
+  const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserMatchingDatas()
+
+  const matchedStudies = studiesData?.filter((study) => {
+    return userData?.some((userMatch) => {
       return (
         study.field === userMatch.field &&
         study.detailField === userMatch.detailField &&
@@ -20,7 +24,7 @@ export default function StudyMatchingDetailPage(props: StudyMatchingDetailPagePr
     })
   })
 
-  const detailInfo: StudyDataType | undefined = matchedStudies.find((data) => data.id === props.params.postId)
+  const detailInfo: StudyDataType | undefined = matchedStudies?.find((data) => data.id === props.params.postId)
   const isContentLong = detailInfo && detailInfo.content.length >= 250
 
   return (

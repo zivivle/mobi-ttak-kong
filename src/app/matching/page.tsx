@@ -1,11 +1,15 @@
 'use client'
 import { NoMatchingCard } from './_components/NoMatchingCard'
 import { MatchingCard, MatchingLoading } from './_components'
-import { StudyData, userMatchingData } from '@/mocks'
+import { useStudies } from '@/hooks/useStudies'
+import { useUserMatchingDatas } from '@/hooks/useUserMatchingDatas'
 
 export default function StudyMatchingPage() {
-  const matchedStudies = StudyData.filter((study) => {
-    return userMatchingData.some((userMatch) => {
+  const { data: studiesData, isLoading: isStudiesLoading, isError: isStudiesError } = useStudies()
+  const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserMatchingDatas()
+
+  const matchedStudies = studiesData?.filter((study) => {
+    return userData?.some((userMatch) => {
       return (
         study.field === userMatch.field &&
         study.detailField === userMatch.detailField &&
@@ -15,7 +19,8 @@ export default function StudyMatchingPage() {
       )
     })
   })
-
+  if (isStudiesLoading || isUserLoading || !matchedStudies) return <MatchingLoading />
+  if (isStudiesError || isUserError) return <div>isError...</div>
   return (
     <div className={`${matchedStudies.length < 3 ? 'h-[92vh]' : 'h-auto'} bg-primary-50 flex flex-col px-[100px]`}>
       {!matchedStudies || matchedStudies.length === 0 ? (
@@ -29,9 +34,7 @@ export default function StudyMatchingPage() {
             } bg-white flex flex-row flex-wrap justify-center items-center rounded-[40px] pb-[40px] mb-[40px] gap-x-[120px]`}
           >
             {matchedStudies.length > 0 &&
-              matchedStudies.map((data) => (
-                <MatchingCard key={data.id} id={data.id} label={data.field} title={data.title} content={data.content} />
-              ))}
+              matchedStudies.map((data) => <MatchingCard key={data.id} MatchingStudyData={data} />)}
             {matchedStudies.length % 2 === 1 && <NoMatchingCard />}
           </div>
         </div>
