@@ -5,7 +5,7 @@ import levelImage from '../../../../../public/image/level-image.png'
 import Image from 'next/image'
 import { StudyAppliedDetailType } from '.'
 import { StudyDataType } from '@/types'
-import { useAppliedStudies } from '@/hooks/useAppliedStudies'
+import { useAppliedStudies } from '../_states'
 
 export default function StudyAppliedDetailPage(props: StudyAppliedDetailType) {
   const { data, isLoading, isError } = useAppliedStudies()

@@ -1,8 +1,7 @@
 'use client'
 import { NoMatchingCard } from './_components/NoMatchingCard'
 import { MatchingCard, MatchingLoading } from './_components'
-import { useStudies } from '@/hooks/useStudies'
-import { useUserMatchingDatas } from '@/hooks/useUserMatchingDatas'
+import { useStudies, useUserMatchingDatas } from './_states'
 
 export default function StudyMatchingPage() {
   const { data: studiesData, isLoading: isStudiesLoading, isError: isStudiesError } = useStudies()

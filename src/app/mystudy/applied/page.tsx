@@ -1,9 +1,8 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { StudyAppliedCard } from './_components'
-
 import { StudyAppliedEmptyDataCard } from './_components/StudyAppliedEmptyDataCard/StudyAppliedEmptyDataCard'
-import { useAppliedStudies } from '@/hooks/useAppliedStudies'
+import { useAppliedStudies } from './_states'
 
 export default function StudyAppliedPage() {
   const router = useRouter()

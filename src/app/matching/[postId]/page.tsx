@@ -2,11 +2,10 @@
 
 import levelImage from '/public/image/level-image.png'
 import Image from 'next/image'
-
 import { StudyMatchingDetailPageProps } from '.'
 import { StudyDataType } from '@/types'
-import { useStudies } from '@/hooks/useStudies'
-import { useUserMatchingDatas } from '@/hooks/useUserMatchingDatas'
+import { useStudies } from '@/app/matching/_states/server/hooks/useStudies'
+import { useUserMatchingDatas } from '../_states/server'
 
 export default function StudyMatchingDetailPage(props: StudyMatchingDetailPageProps) {
   const { data: studiesData, isLoading: isStudiesLoading, isError: isStudiesError } = useStudies()

@@ -4,7 +4,7 @@ import { StudyCreatedCard } from './_components'
 import { studyCreatedConstants } from '@/constants'
 import { useRouter } from 'next/navigation'
 import { StudyCreatedEmptyCard } from './_components/StudyCreatedEmptyCard'
-import { useCreatedStudies } from '@/hooks/useCreatedStudies'
+import { useCreatedStudies } from './_states'
 
 export default function StudyCreatedPage() {
   const router = useRouter()

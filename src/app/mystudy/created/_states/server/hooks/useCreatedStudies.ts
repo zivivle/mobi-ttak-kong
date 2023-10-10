@@ -1,6 +1,6 @@
+import { StudyDataType } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import { StudyDataType } from '@/types'
 
 export const useCreatedStudies = () => {
   return useQuery({

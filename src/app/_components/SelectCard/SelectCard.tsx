@@ -3,8 +3,9 @@ import Image from 'next/image'
 import { SelectCardProps } from '.'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
-import { isOpenLoginModal } from '@/store'
+
 import { useAtom } from 'jotai'
+import { isOpenLoginModal } from '@/app/_states/client'
 
 export const SelectCard = ({ mypageInfo }: { mypageInfo: SelectCardProps }) => {
   const isSelectCardLeft = mypageInfo.id === 1
