@@ -4,13 +4,13 @@ import { usePathname, useRouter } from 'next/navigation'
 import mainLogo from '/public/image/logo-black.png'
 import beanIcon from '/public/image/icon-beans.png'
 import Image from 'next/image'
-import { siteConfig } from '@/constants/main'
-import { IntroHeader } from '../IntroHeader/IntroHeader'
 import { signOut, useSession } from 'next-auth/react'
 import { StudyData, userMatchingData } from '@/mocks'
 import { useAtom } from 'jotai'
-import { isOpenLoginModal } from '@/app/_states'
 import LoginModalPage from '@/app/_components/LoginModal/LoginModal'
+import { siteConfig } from '@/constants'
+import { IntroHeader } from '..'
+import { isOpenLoginModal } from '@/app/_states'
 
 export const Header = () => {
   const router = useRouter()

@@ -2,7 +2,6 @@
 
 import { loginConstants } from '@/constants/login.constants'
 import Image from 'next/image'
-
 import { signIn } from 'next-auth/react'
 import { LoginModalPageProps, NaverSignInOutButton } from '.'
 

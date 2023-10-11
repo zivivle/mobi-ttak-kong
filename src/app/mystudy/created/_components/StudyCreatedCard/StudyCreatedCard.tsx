@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 import levelIcon from '/public/image/level-image.png'
-import { StudyCreatedCardProps } from '.'
 import { useAtom } from 'jotai'
+import { StudyCreatedCardProps } from '.'
 import { isStudyClosedToggle } from '../../_states'
 
 export const StudyCreatedCard = ({ studyData }: StudyCreatedCardProps) => {

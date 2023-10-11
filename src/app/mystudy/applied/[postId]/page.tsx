@@ -4,8 +4,8 @@ import { Button } from '@/components'
 import levelImage from '/public/image/level-image.png'
 import Image from 'next/image'
 import { StudyAppliedDetailType } from '.'
-import { StudyDataType } from '@/types'
 import { useAppliedStudies } from '../_states'
+import { StudyDataType } from '@/types'
 
 export default function StudyAppliedDetailPage(props: StudyAppliedDetailType) {
   const { data, isLoading, isError } = useAppliedStudies()

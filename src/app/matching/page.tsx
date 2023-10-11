@@ -1,6 +1,5 @@
 'use client'
-import { NoMatchingCard } from './_components/NoMatchingCard'
-import { MatchingCard, MatchingLoading } from './_components'
+import { MatchingCard, MatchingLoading, NoMatchingCard } from './_components'
 import { useStudies, useUserMatchingDatas } from './_states'
 
 export default function StudyMatchingPage() {

@@ -1,10 +1,9 @@
 import { Button } from '@/components'
 import Image from 'next/image'
-import { SelectCardProps } from '.'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
-
 import { useAtom } from 'jotai'
+import { SelectCardProps } from '.'
 import { isOpenLoginModal } from '@/app/_states'
 
 export const SelectCard = ({ mypageInfo }: { mypageInfo: SelectCardProps }) => {

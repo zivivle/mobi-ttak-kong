@@ -1,10 +1,9 @@
 'use client'
 
-import { StudyCreatedCard } from './_components'
-import { studyCreatedConstants } from '@/constants'
 import { useRouter } from 'next/navigation'
-import { StudyCreatedEmptyCard } from './_components/StudyCreatedEmptyCard'
 import { useCreatedStudies } from './_states'
+import { studyCreatedConstants } from '@/constants'
+import { StudyCreatedCard, StudyCreatedEmptyCard } from './_components'
 
 export default function StudyCreatedPage() {
   const router = useRouter()
