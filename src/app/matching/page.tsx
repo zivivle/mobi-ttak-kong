@@ -3,7 +3,7 @@ import { MatchingCard, MatchingLoading, NoMatchingCard } from './_components'
 import { useStudies, useUserMatchingDatas } from './_states'
 
 export default function StudyMatchingPage() {
-  const { data: studiesData, isLoading: isStudiesLoading, isError: isStudiesError } = useStudies()
+  const studiesData = useStudies()
   const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserMatchingDatas()
 
   const matchedStudies = studiesData?.filter((study) => {
@@ -17,8 +17,8 @@ export default function StudyMatchingPage() {
       )
     })
   })
-  if (isStudiesLoading || isUserLoading || !matchedStudies) return <MatchingLoading />
-  if (isStudiesError || isUserError) return <div>isError...</div>
+  if (isUserLoading || !matchedStudies) return <MatchingLoading />
+  if (isUserError) return <div>isError...</div>
   return (
     <div className={`${matchedStudies.length < 3 ? 'h-[92vh]' : 'h-auto'} bg-primary-50 flex flex-col px-[100px]`}>
       {!matchedStudies || matchedStudies.length === 0 ? (

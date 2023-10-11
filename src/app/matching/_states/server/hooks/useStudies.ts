@@ -1,19 +1,24 @@
 import { StudyDataType } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
+import { useState } from 'react'
 
 export const useStudies = () => {
-  return useQuery({
+  const [loadedData, setloadedData] = useState<StudyDataType[] | undefined>()
+
+  useQuery({
     queryKey: ['studies'],
     queryFn: async () => {
       const { data } = await axios.get<StudyDataType[]>('/api/getStudies')
       return data
     },
     onSuccess: (data) => {
-      console.log('Data loaded successfully!', data)
+      setloadedData(data)
+      console.log('useStudies 데이터 전송 성공!', loadedData)
     },
-    onError: (error) => {
-      console.error('Error fetching studies:', error)
+    onError: (error: Error) => {
+      console.log('useStudies 데이터 전송 실패!', error.message)
     },
   })
+  return loadedData
 }
