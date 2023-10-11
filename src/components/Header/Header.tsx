@@ -7,10 +7,10 @@ import Image from 'next/image'
 import { signOut, useSession } from 'next-auth/react'
 import { StudyData, userMatchingData } from '@/mocks'
 import { useAtom } from 'jotai'
-import LoginModalPage from '@/app/_components/LoginModal/LoginModal'
 import { siteConfig } from '@/constants'
 import { IntroHeader } from '..'
 import { isOpenLoginModal } from '@/app/_states'
+import LoginModalPage from '@/app/_components/LoginModal/LoginModal'
 
 export const Header = () => {
   const router = useRouter()

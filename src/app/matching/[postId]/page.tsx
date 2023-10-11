@@ -7,7 +7,7 @@ import levelImage from '/public/image/level-image.png'
 import Image from 'next/image'
 
 export default function StudyMatchingDetailPage(props: StudyMatchingDetailPageProps) {
-  const { data: studiesData, isLoading: isStudiesLoading, isError: isStudiesError } = useStudies()
+  const studiesData = useStudies()
   const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserMatchingDatas()
 
   const matchedStudies = studiesData?.filter((study) => {
