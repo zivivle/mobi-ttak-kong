@@ -6,7 +6,7 @@ import { useStudies, useUserMatchingDatas } from '../_states'
 import levelImage from '/public/image/level-image.png'
 import Image from 'next/image'
 
-export default function StudyMatchingDetailPage(props: StudyMatchingDetailPageProps) {
+export default function StudyMatchingDetailPage({ params }: StudyMatchingDetailPageProps) {
   const studiesData = useStudies()
   const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserMatchingDatas()
 
@@ -22,7 +22,7 @@ export default function StudyMatchingDetailPage(props: StudyMatchingDetailPagePr
     })
   })
 
-  const detailInfo: StudyDataType | undefined = matchedStudies?.find((data) => data.id === props.params.postId)
+  const detailInfo: StudyDataType | undefined = matchedStudies?.find((data) => data.id === params.postId)
   const isContentLong = detailInfo && detailInfo.content.length >= 250
 
   return (
