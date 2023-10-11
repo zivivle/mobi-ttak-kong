@@ -4,7 +4,7 @@ import '@/styles/global.css'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import AuthSession from './api/auth/[...nextauth]/AuthSession'
-import TanstackProvider from '@/utils/tanstackProvider'
+import TanstackProvider from '@/libs/tanstackProvider'
 
 const mainFont = localFont({
   src: './fonts/PretendardVariable.woff2',

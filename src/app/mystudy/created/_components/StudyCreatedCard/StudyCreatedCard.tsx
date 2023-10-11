@@ -13,12 +13,7 @@ export const StudyCreatedCard = ({ studyData }: StudyCreatedCardProps) => {
   const { title, detailField, content, nowMemberCount, minMemberCount, level, field } = studyData
 
   const onClickIsClosedToggle = () => {
-    if (isClosedToggle === true) {
-      setIsClosedToggle(false)
-    }
-    if (isClosedToggle === false) {
-      setIsClosedToggle(true)
-    }
+    setIsClosedToggle((prev) => !prev)
   }
 
   // 스터디 수정페이지 완성되면 연결하기

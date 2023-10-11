@@ -5,6 +5,7 @@ import defaultProfile from '/public/image/default-profile-image.png'
 import levelImage from '/public/image/level-image.png'
 import { useRouter } from 'next/navigation'
 import { StudyAppliedCardProps } from '.'
+import { createMoreViewString } from '@/utils'
 
 export const StudyAppliedCard = ({ studyData }: StudyAppliedCardProps) => {
   const router = useRouter()
@@ -14,6 +15,7 @@ export const StudyAppliedCard = ({ studyData }: StudyAppliedCardProps) => {
   }
 
   const { field, detailField, title, level, content, nowMemberCount, minMemberCount, isInPerson, location } = studyData
+  const minLengthContent = createMoreViewString(content, 40)
 
   return (
     <div className="w-[400px] bg-primary-50 rounded-[20px] p-[43px] mt-[30px] shadow-md">
@@ -32,11 +34,7 @@ export const StudyAppliedCard = ({ studyData }: StudyAppliedCardProps) => {
         </div>
       </div>
       <div className="mt-[20px] text-primary-gray200 text-[13px]">
-        {content.length > 40 ? (
-          <span dangerouslySetInnerHTML={{ __html: content.slice(0, 40) + '...' }} />
-        ) : (
-          <span dangerouslySetInnerHTML={{ __html: content }} />
-        )}
+        <span dangerouslySetInnerHTML={{ __html: minLengthContent }} />
       </div>
       <div className="flex flex-row text-[13px] mt-3 font-semibold">
         <p className="">

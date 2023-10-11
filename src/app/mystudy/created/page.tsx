@@ -18,11 +18,7 @@ export default function StudyCreatedPage() {
   if (isError) return <div>Error...</div>
   return (
     <div
-      className={
-        data.length >= 3
-          ? 'h-auto flex justify-center items-center pt-[70px] bg-primary-50'
-          : 'h-[92vh] flex justify-center items-center bg-primary-50'
-      }
+      className={`flex justify-center items-center bg-primary-50 ${data.length >= 3 ? 'h-auto pt-[70px]' : 'h-[92vh]'}`}
     >
       <div
         className="
