@@ -6,8 +6,8 @@ export const useCreatedStudies = () => {
   return useQuery({
     queryKey: ['createdStudies'],
     queryFn: async () => {
-      const { data } = await axios.get('/api/getUserCreatedStudies')
-      return data as StudyDataType[]
+      const { data } = await axios.get<StudyDataType[]>('/api/getUserCreatedStudies')
+      return data
     },
   })
 }
