@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { useCreatedStudies } from './_states'
 import { studyCreatedConstants } from '@/constants'
 import { StudyCreatedCard, StudyCreatedEmptyCard } from './_components'
+import { ErrorPage, LoadingPage } from '@/components'
 
 const StudyCreatedPage = () => {
   const router = useRouter()
@@ -13,8 +14,8 @@ const StudyCreatedPage = () => {
     router.push('/mystudy/applied')
   }
 
-  if (isLoading) return <div>Loading...</div>
-  if (isError) return <div>Error...</div>
+  if (isLoading) return <LoadingPage />
+  if (isError) return <ErrorPage />
   return (
     <div
       className={`flex justify-center items-center bg-primary-50 ${data.length >= 3 ? 'h-auto pt-[70px]' : 'h-[92vh]'}`}

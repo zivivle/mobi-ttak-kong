@@ -1,4 +1,6 @@
 'use client'
+
+import { ErrorPage } from '@/components'
 import { MatchingCard, MatchingLoading, NoMatchingCard } from './_components'
 import { useStudies, useUserMatchingDatas } from './_states'
 
@@ -18,7 +20,7 @@ const StudyMatchingPage = () => {
     })
   })
   if (isUserLoading || !matchedStudies) return <MatchingLoading />
-  if (isUserError) return <div>isError...</div>
+  if (isUserError) return <ErrorPage />
   return (
     <div className={`${matchedStudies.length < 3 ? 'h-[92vh]' : 'h-auto'} bg-primary-50 flex flex-col px-[100px]`}>
       {!matchedStudies || matchedStudies.length === 0 ? (
