@@ -2,21 +2,22 @@
 
 import Image from 'next/image'
 import levelIcon from '/public/image/level-image.png'
-import { useState } from 'react'
 import { StudyCreatedCardProps } from '.'
+import { useAtom } from 'jotai'
+import { isStudyClosedToggle } from '../../_states'
 
 export const StudyCreatedCard = ({ studyData }: StudyCreatedCardProps) => {
-  // const router = useRouter()
-  const [isClosed, setIsClosed] = useState(studyData.isClosed)
+  // const router = useRouter() isStudyClosedToggle
+  const [isClosedToggle, setIsClosedToggle] = useAtom(isStudyClosedToggle)
 
   const { title, detailField, content, nowMemberCount, minMemberCount, level, field } = studyData
 
   const onClickIsClosedToggle = () => {
-    if (isClosed === true) {
-      setIsClosed(false)
+    if (isClosedToggle === true) {
+      setIsClosedToggle(false)
     }
-    if (isClosed === false) {
-      setIsClosed(true)
+    if (isClosedToggle === false) {
+      setIsClosedToggle(true)
     }
   }
 
@@ -58,7 +59,7 @@ export const StudyCreatedCard = ({ studyData }: StudyCreatedCardProps) => {
           </div>
         </div>
       </div>
-      {isClosed ? (
+      {isClosedToggle ? (
         <div
           onClick={onClickIsClosedToggle}
           className="bg-primary-gray200 p-4 w-[10px] mt-[60px] mb-[30px] flex justify-center items-center inline-block text-white font-bold rounded-r-[15px] hover:bg-opacity-70 cursor-pointer transition-all duration-300"
