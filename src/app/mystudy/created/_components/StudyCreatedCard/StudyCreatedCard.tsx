@@ -9,6 +9,8 @@ export const StudyCreatedCard = ({ studyData }: StudyCreatedCardProps) => {
   // const router = useRouter()
   const [isClosed, setIsClosed] = useState(studyData.isClosed)
 
+  const { title, detailField, content, nowMemberCount, minMemberCount, level, field } = studyData
+
   const onClickIsClosedToggle = () => {
     if (isClosed === true) {
       setIsClosed(false)
@@ -30,15 +32,15 @@ export const StudyCreatedCard = ({ studyData }: StudyCreatedCardProps) => {
           <div className=" flex flex-row items-center h-[30px] ">
             <div>
               <div className="text-[14px] flex flex-row items-center">
-                <p className="font-bold">{studyData.title}</p>
-                <p className="text-[12px] text-primary-gray200 ml-2 font-semibold">{studyData.detailField}</p>
+                <p className="font-bold">{title}</p>
+                <p className="text-[12px] text-primary-gray200 ml-2 font-semibold">{detailField}</p>
               </div>
             </div>
           </div>
-          <div className="mt-2 text-primary-gray200 text-[13px] w-[240px]">{studyData.content}</div>
+          <div className="mt-2 text-primary-gray200 text-[13px] w-[240px]">{content}</div>
           <div className=" flex flex-row justify-start text-[13px] mt-12 font-semibold">
             <p className="">
-              현재 인원 / 최소 인원 ({studyData.nowMemberCount} / {studyData.minMemberCount})
+              현재 인원 / 최소 인원 ({nowMemberCount} / {minMemberCount})
             </p>
           </div>
         </div>
@@ -49,10 +51,10 @@ export const StudyCreatedCard = ({ studyData }: StudyCreatedCardProps) => {
           </div>
           <div className="bg-white shadow-md rounded-[50%] ml-7 px-2 py-3 flex flex-col justify-center items-center mt-[20px]">
             <Image src={levelIcon} alt="레벨 아이콘" width={50} height={50} />
-            <div>{studyData.level}</div>
+            <div>{level}</div>
           </div>
           <div className="ml-7 shadow-md flex justify-center bg-primary-300 px-3 py-1 text-[12px] font-semibold text-white rounded-[20px] mt-4">
-            <p>{studyData.field}</p>
+            <p>{field}</p>
           </div>
         </div>
       </div>
