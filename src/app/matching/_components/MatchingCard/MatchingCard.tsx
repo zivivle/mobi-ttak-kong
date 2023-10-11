@@ -3,9 +3,8 @@ import defaultProfile from '/public/image/default-profile-image.png'
 import { Button } from '@/components'
 import { MatchingCardProps } from '.'
 import { useRouter } from 'next/navigation'
-import { StudyDataType } from '@/types'
 
-export const MatchingCard = ({ MatchingStudyData }: { MatchingStudyData: StudyDataType }) => {
+export const MatchingCard = ({ MatchingStudyData }: MatchingCardProps) => {
   const router = useRouter()
   const onClickToMatchingPage = () => {
     router.push(`/matching/${MatchingStudyData.id}`)

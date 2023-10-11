@@ -3,10 +3,10 @@ import { Button } from '@/components'
 import Image from 'next/image'
 import defaultProfile from '/public/image/default-profile-image.png'
 import levelImage from '/public/image/level-image.png'
-import { StudyDataType } from '@/types'
 import { useRouter } from 'next/navigation'
+import { StudyAppliedCardProps } from '.'
 
-export const StudyAppliedCard = ({ studyData }: { studyData: StudyDataType }) => {
+export const StudyAppliedCard = ({ studyData }: StudyAppliedCardProps) => {
   const router = useRouter()
 
   const onClickToStudyDetailPage = () => {

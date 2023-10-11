@@ -2,10 +2,10 @@
 
 import Image from 'next/image'
 import levelIcon from '/public/image/level-image.png'
-import { StudyDataType } from '@/types'
 import { useState } from 'react'
+import { StudyCreatedCardProps } from '.'
 
-export const StudyCreatedCard = ({ studyData }: { studyData: StudyDataType }) => {
+export const StudyCreatedCard = ({ studyData }: StudyCreatedCardProps) => {
   // const router = useRouter()
   const [isClosed, setIsClosed] = useState(studyData.isClosed)
 
