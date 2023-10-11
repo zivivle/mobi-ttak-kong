@@ -9,5 +9,11 @@ export const useStudies = () => {
       const { data } = await axios.get<StudyDataType[]>('/api/getStudies')
       return data
     },
+    onSuccess: (data) => {
+      console.log('Data loaded successfully!', data)
+    },
+    onError: (error) => {
+      console.error('Error fetching studies:', error)
+    },
   })
 }
