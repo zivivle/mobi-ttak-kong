@@ -1,1 +1,1 @@
-export * from './hooks/useCreatedStudies'
+export * from './hooks'

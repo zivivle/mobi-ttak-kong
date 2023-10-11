@@ -2,9 +2,9 @@
 
 import { loginConstants } from '@/constants/login.constants'
 import Image from 'next/image'
-import { LoginModalPageProps } from './LoginModal.type'
-import { NaverSignInOutButton } from './_components/NaverSignInOutButton'
+
 import { signIn } from 'next-auth/react'
+import { LoginModalPageProps, NaverSignInOutButton } from '.'
 
 export default function LoginModalPage({ setIsModalOpen }: LoginModalPageProps) {
   return (

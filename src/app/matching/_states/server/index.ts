@@ -1,2 +1,1 @@
-export * from './hooks/useStudies'
-export * from './hooks/useUserMatchingDatas'
+export * from './hooks'

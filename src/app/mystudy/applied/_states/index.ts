@@ -1,1 +1,1 @@
-export * from './server/hooks/useAppliedStudies'
+export * from './server'

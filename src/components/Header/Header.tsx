@@ -6,11 +6,11 @@ import beanIcon from '/public/image/icon-beans.png'
 import Image from 'next/image'
 import { siteConfig } from '@/constants/main'
 import { IntroHeader } from '../IntroHeader/IntroHeader'
-import LoginModalPage from '../../app/_components/LoginModal/LoginModal'
 import { signOut, useSession } from 'next-auth/react'
 import { StudyData, userMatchingData } from '@/mocks'
 import { useAtom } from 'jotai'
 import { isOpenLoginModal } from '@/app/_states'
+import LoginModalPage from '@/app/_components/LoginModal/LoginModal'
 
 export const Header = () => {
   const router = useRouter()
