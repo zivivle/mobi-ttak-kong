@@ -23,7 +23,7 @@ const StudyMatchingPage = () => {
   if (isUserError) return <ErrorPage />
   return (
     <div className={`${matchedStudies.length < 3 ? 'h-[92vh]' : 'h-auto'} bg-primary-50 flex flex-col px-[100px]`}>
-      {!matchedStudies || matchedStudies.length === 0 ? (
+      {!matchedStudies ? (
         <MatchingLoading />
       ) : (
         <div>
