@@ -10,7 +10,7 @@ import { useAtom } from 'jotai'
 import { siteConfig } from '@/constants'
 import { IntroHeader } from '..'
 import { isOpenLoginModal } from '@/app/_states'
-import LoginModalPage from '@/app/_components/LoginModal/LoginModal'
+import { LoginModalPage } from '@/app/_components'
 
 export const Header = () => {
   const router = useRouter()
