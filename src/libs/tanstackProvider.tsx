@@ -2,10 +2,11 @@
 
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { PropsWithChildren } from 'react'
 
-//쿼리 클라이언트 세팅하기
+//쿼리 클라이언트 세팅하기!
 
-const TanstackProvider = ({ children }: { children: React.ReactNode }) => {
+const TanstackProvider = ({ children }: PropsWithChildren<React.ReactNode>) => {
   const queryClient = new QueryClient()
 
   return (
