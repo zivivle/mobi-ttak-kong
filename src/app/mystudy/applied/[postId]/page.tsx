@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { StudyAppliedDetailType } from '.'
 import { useAppliedStudies } from '../_states'
 
-export default function StudyAppliedDetailPage({ params }: StudyAppliedDetailType) {
+const StudyAppliedDetailPage = ({ params }: StudyAppliedDetailType) => {
   const appliedStudyData = useAppliedStudies()
   const studyData = appliedStudyData?.find((data) => data.id === params.postId)
 
@@ -56,3 +56,5 @@ export default function StudyAppliedDetailPage({ params }: StudyAppliedDetailTyp
     </div>
   )
 }
+
+export default StudyAppliedDetailPage

@@ -6,7 +6,7 @@ import { useStudies, useUserMatchingDatas } from '../_states'
 import levelImage from '/public/image/level-image.png'
 import Image from 'next/image'
 
-export default function StudyMatchingDetailPage({ params }: StudyMatchingDetailPageProps) {
+const StudyMatchingDetailPage = ({ params }: StudyMatchingDetailPageProps) => {
   const studiesData = useStudies()
   const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserMatchingDatas()
 
@@ -69,3 +69,5 @@ export default function StudyMatchingDetailPage({ params }: StudyMatchingDetailP
     </div>
   )
 }
+
+export default StudyMatchingDetailPage

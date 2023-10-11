@@ -2,7 +2,7 @@
 import { MatchingCard, MatchingLoading, NoMatchingCard } from './_components'
 import { useStudies, useUserMatchingDatas } from './_states'
 
-export default function StudyMatchingPage() {
+const StudyMatchingPage = () => {
   const studiesData = useStudies()
   const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserMatchingDatas()
 
@@ -40,3 +40,5 @@ export default function StudyMatchingPage() {
     </div>
   )
 }
+
+export default StudyMatchingPage

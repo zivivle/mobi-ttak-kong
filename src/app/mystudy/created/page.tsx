@@ -5,7 +5,7 @@ import { useCreatedStudies } from './_states'
 import { studyCreatedConstants } from '@/constants'
 import { StudyCreatedCard, StudyCreatedEmptyCard } from './_components'
 
-export default function StudyCreatedPage() {
+const StudyCreatedPage = () => {
   const router = useRouter()
   const { data, isLoading, isError } = useCreatedStudies()
 
@@ -49,3 +49,5 @@ export default function StudyCreatedPage() {
     </div>
   )
 }
+
+export default StudyCreatedPage

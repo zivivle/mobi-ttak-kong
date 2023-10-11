@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import { useAppliedStudies } from './_states'
 import { StudyAppliedCard, StudyAppliedEmptyDataCard } from './_components'
 
-export default function StudyAppliedPage() {
+const StudyAppliedPage = () => {
   const router = useRouter()
   const studyData = useAppliedStudies()
 
@@ -40,3 +40,5 @@ export default function StudyAppliedPage() {
     </div>
   )
 }
+
+export default StudyAppliedPage
