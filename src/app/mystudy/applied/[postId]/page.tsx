@@ -5,28 +5,18 @@ import levelImage from '/public/image/level-image.png'
 import Image from 'next/image'
 import { StudyAppliedDetailType } from '.'
 import { useAppliedStudies } from '../_states'
-import { StudyDataType } from '@/types'
 
-export default function StudyAppliedDetailPage(props: StudyAppliedDetailType) {
-  const { data, isLoading, isError } = useAppliedStudies()
-  const studyData: StudyDataType | undefined = data?.find((data) => data.id === props.params.postId)
+export default function StudyAppliedDetailPage({ params }: StudyAppliedDetailType) {
+  const appliedStudyData = useAppliedStudies()
+  const studyData = appliedStudyData?.find((data) => data.id === params.postId)
 
   const { field, level, detailField, title, nowMemberCount, minMemberCount, isInPerson, location, content } =
     studyData || {}
 
   const isContentLong = studyData && studyData.content.length >= 250
 
-  if (isLoading) return <div>Loading...</div>
-  if (isError) return <div>Error...</div>
-
   return (
-    <div
-      className={
-        isContentLong
-          ? 'h-auto flex justify-center items-center  bg-primary-50'
-          : 'h-[92vh] flex justify-center items-center  bg-primary-50'
-      }
-    >
+    <div className={`${isContentLong ? 'h-auto' : 'h-[92vh]'} flex justify-center items-center  bg-primary-50`}>
       <div
         className="
          h-auto flex flex-col px-[100px]"
