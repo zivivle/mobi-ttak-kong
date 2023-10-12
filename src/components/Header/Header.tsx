@@ -8,9 +8,9 @@ import { signOut, useSession } from 'next-auth/react'
 import { StudyData, userMatchingData } from '@/mocks'
 import { useAtom } from 'jotai'
 import { siteConfig } from '@/constants'
-import { IntroHeader } from '..'
 import { isOpenLoginModal } from '@/app/_states'
 import { LoginModalPage } from '@/app/_components'
+import { IntroHeader } from '../IntroHeader/IntroHeader'
 
 export const Header = () => {
   const router = useRouter()
