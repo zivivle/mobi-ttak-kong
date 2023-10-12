@@ -1,24 +1,24 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useCreatedStudies } from './_states'
 import { studyCreatedConstants } from '@/constants'
 import { StudyCreatedCard, StudyCreatedEmptyCard } from './_components'
-import { ErrorPage, LoadingPage } from '@/components'
+import { useCreatedStudyQuery } from './_states'
 
 const StudyCreatedPage = () => {
   const router = useRouter()
-  const { data, isLoading, isError } = useCreatedStudies()
+  const { data: studyData } = useCreatedStudyQuery()
 
   const onClickToMyCreatedStudy = () => {
     router.push('/mystudy/applied')
   }
 
-  if (isLoading) return <LoadingPage />
-  if (isError) return <ErrorPage />
+  if (!studyData) return
   return (
     <div
-      className={`flex justify-center items-center bg-primary-50 ${data.length >= 3 ? 'h-auto pt-[70px]' : 'h-[92vh]'}`}
+      className={`flex justify-center items-center bg-primary-50 ${
+        studyData.length >= 3 ? 'h-auto pt-[70px]' : 'h-[92vh]'
+      }`}
     >
       <div
         className="
@@ -40,10 +40,10 @@ const StudyCreatedPage = () => {
             dangerouslySetInnerHTML={{ __html: studyCreatedConstants.description }}
           />
           <div className="flex flex-row flex-wrap justify-center items-center pb-[30px] y-10 mb-[40px] gap-x-[40px]">
-            {data.map((data) => (
+            {studyData.map((data) => (
               <StudyCreatedCard key={data.id} studyData={data} />
             ))}
-            {data.length === 0 || (data.length % 2 === 1 && <StudyCreatedEmptyCard />)}
+            {studyData.length === 0 || (studyData.length % 2 === 1 && <StudyCreatedEmptyCard />)}
           </div>
         </div>
       </div>

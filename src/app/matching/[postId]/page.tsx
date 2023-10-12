@@ -2,15 +2,15 @@
 
 import { StudyDataType } from '@/types'
 import { StudyMatchingDetailPageProps } from '.'
-import { useStudies, useUserMatchingDatas } from '../_states'
+import { useStudyQuery, useUserMatchingDataQuery } from '../_states'
 import levelImage from '/public/image/level-image.png'
 import Image from 'next/image'
 
 const StudyMatchingDetailPage = ({ params }: StudyMatchingDetailPageProps) => {
-  const studiesData = useStudies()
-  const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserMatchingDatas()
+  const { data: studyData } = useStudyQuery()
+  const { data: userData } = useUserMatchingDataQuery()
 
-  const matchedStudies = studiesData?.filter((study) => {
+  const matchedStudies = studyData?.filter((study) => {
     return userData?.some((userMatch) => {
       return (
         study.field === userMatch.field &&

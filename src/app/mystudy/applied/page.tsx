@@ -1,11 +1,11 @@
 'use client'
 import { useRouter } from 'next/navigation'
-import { useAppliedStudies } from './_states'
 import { StudyAppliedCard, StudyAppliedEmptyDataCard } from './_components'
+import { useAppliedStudyQuery } from './_states'
 
 const StudyAppliedPage = () => {
   const router = useRouter()
-  const studyData = useAppliedStudies()
+  const { data: studyData } = useAppliedStudyQuery()
 
   const onClickToMyCreatedStudy = () => {
     router.push('/mystudy/created')

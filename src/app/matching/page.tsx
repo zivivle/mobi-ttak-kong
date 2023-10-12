@@ -1,14 +1,13 @@
 'use client'
 
-import { ErrorPage } from '@/components'
 import { MatchingCard, MatchingLoading, NoMatchingCard } from './_components'
-import { useStudies, useUserMatchingDatas } from './_states'
+import { useStudyQuery, useUserMatchingDataQuery } from './_states'
 
 const StudyMatchingPage = () => {
-  const studiesData = useStudies()
-  const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserMatchingDatas()
+  const { data: studyData } = useStudyQuery()
+  const { data: userData } = useUserMatchingDataQuery()
 
-  const matchedStudies = studiesData?.filter((study) => {
+  const matchedStudies = studyData?.filter((study) => {
     return userData?.some((userMatch) => {
       return (
         study.field === userMatch.field &&
@@ -19,8 +18,8 @@ const StudyMatchingPage = () => {
       )
     })
   })
-  if (isUserLoading || !matchedStudies) return <MatchingLoading />
-  if (isUserError) return <ErrorPage />
+
+  if (!matchedStudies) return
   return (
     <div className={`${matchedStudies.length < 3 ? 'h-[92vh]' : 'h-auto'} bg-primary-50 flex flex-col px-[100px]`}>
       {!matchedStudies ? (

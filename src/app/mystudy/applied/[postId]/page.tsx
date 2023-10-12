@@ -4,10 +4,10 @@ import { Button } from '@/components'
 import levelImage from '/public/image/level-image.png'
 import Image from 'next/image'
 import { StudyAppliedDetailType } from '.'
-import { useAppliedStudies } from '../_states'
+import { useAppliedStudyQuery } from '../_states'
 
 const StudyAppliedDetailPage = ({ params }: StudyAppliedDetailType) => {
-  const appliedStudyData = useAppliedStudies()
+  const { data: appliedStudyData } = useAppliedStudyQuery()
   const studyData = appliedStudyData?.find((data) => data.id === params.postId)
 
   const { field, level, detailField, title, nowMemberCount, minMemberCount, isInPerson, location, content } =
