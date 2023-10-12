@@ -6,7 +6,7 @@ import { PropsWithChildren } from 'react'
 
 //쿼리 클라이언트 세팅하기!
 
-const TanstackProvider = ({ children }: PropsWithChildren) => {
+const Providers = ({ children }: PropsWithChildren) => {
   const queryClient = new QueryClient()
 
   return (
@@ -17,4 +17,4 @@ const TanstackProvider = ({ children }: PropsWithChildren) => {
   )
 }
 
-export default TanstackProvider
+export default Providers
