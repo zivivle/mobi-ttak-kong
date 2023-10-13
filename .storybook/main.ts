@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs'
+const path = require('path')
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -14,6 +15,15 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag',
+  },
+  webpackFinal: async (config) => {
+    config.resolve = config.resolve || { alias: {} }
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      // 절대 경로 추가
+      '@': path.resolve(__dirname, '../src/'),
+    }
+    return config
   },
 }
 export default config
