@@ -2,13 +2,12 @@
 
 import Image from 'next/image'
 import levelIcon from '/public/image/level-image.png'
-import { useAtom } from 'jotai'
 import { StudyCreatedCardProps } from '.'
-import { isStudyClosedToggle } from '../../_states'
+import { useState } from 'react'
 
 export const StudyCreatedCard = ({ studyData }: StudyCreatedCardProps) => {
   // const router = useRouter() isStudyClosedToggle
-  const [isClosedToggle, setIsClosedToggle] = useAtom(isStudyClosedToggle)
+  const [isClosedToggle, setIsClosedToggle] = useState(false)
 
   const { title, detailField, content, nowMemberCount, minMemberCount, level, field } = studyData
 
