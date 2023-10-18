@@ -5,7 +5,14 @@ import { useAppliedStudyQuery } from './_states'
 
 const StudyAppliedPage = () => {
   const router = useRouter()
-  const { data: studyData } = useAppliedStudyQuery()
+
+  const handleSuccess = () => {
+    console.log('이부분에 토글 상태 변경')
+  }
+
+  const { data: studyData } = useAppliedStudyQuery({
+    onSuccess: handleSuccess,
+  })
 
   const onClickToMyCreatedStudy = () => {
     router.push('/mystudy/created')
