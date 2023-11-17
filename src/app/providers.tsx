@@ -1,14 +1,32 @@
 'use client'
 
-import initMocks from '@/mocks'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { SessionProvider } from 'next-auth/react'
 import { PropsWithChildren } from 'react'
 
-if (process.env.NEXT_PUBLIC_API_MOCKING === 'enable') {
-  initMocks()
-}
-
 const Providers = ({ children }: PropsWithChildren) => {
-  return <div>{children}</div>
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+        retry: 0,
+        useErrorBoundary: true,
+      },
+      mutations: {
+        useErrorBoundary: true,
+      },
+    },
+  })
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <SessionProvider>
+        {children}
+        <ReactQueryDevtools initialIsOpen={false} />
+      </SessionProvider>
+    </QueryClientProvider>
+  )
 }
 
 export default Providers
