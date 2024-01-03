@@ -9,12 +9,10 @@ import { cn } from '@/utils/shadcn.utils.ts'
 const ToggleGroup = React.forwardRef<
   React.ElementRef<typeof ToggleGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root>
-  // eslint-disable-next-line react/prop-types
 >(({ className, type, ...props }, ref) => {
   return (
     <ToggleGroupPrimitive.Root
       className={cn('flex flex-wrap gap-[10px]', className)}
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       type={type as any}
       {...props}
       ref={ref}
@@ -26,7 +24,6 @@ ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName
 const ToggleItem = React.forwardRef<
   React.ElementRef<typeof ToggleGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item>
-  // eslint-disable-next-line react/prop-types
 >(({ className, value, ...props }, ref) => (
   <ToggleGroupPrimitive.Item
     ref={ref}
