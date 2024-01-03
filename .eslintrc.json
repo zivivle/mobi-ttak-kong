@@ -56,9 +56,9 @@
     "@typescript-eslint/no-unused-vars": "warn",
     "no-multiple-empty-lines": "error",
     "@typescript-eslint/consistent-type-exports": "error",
-    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/consistent-type-imports": "off",
     "react/jsx-curly-brace-presence": [
-      "error",
+      "off",
       {
         "props": "never",
         "children": "never"
@@ -66,6 +66,9 @@
     ]
   },
   "settings": {
+    "react": {
+      "version": "detect" 
+    },
     "import/resolver": {
       "typescript": {}
     }
